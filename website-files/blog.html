@@ -28,7 +28,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--text-dark);font-family:'Outfit',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;height:68px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:96px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);}
 .nav-logo{font-weight:900;font-size:1.45rem;letter-spacing:-.04em;color:var(--navy-deep);text-decoration:none;}
 .nav-logo .t{color:var(--teal);}
 .nav-logo sup{font-size:.5rem;color:var(--teal);vertical-align:super;font-weight:600;}
@@ -60,7 +60,7 @@ h2.sh.w{color:var(--white);}h2.sh.w em{color:var(--teal-bright);}
 .mi{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap;display:flex;align-items:center;gap:16px;}
 .mi::after{content:'◆';font-size:.35rem;opacity:.5;}
 @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-.page-hero{background:var(--navy-deep);padding:130px 56px 80px;position:relative;overflow:hidden;}
+.page-hero{background:var(--navy-deep);padding:150px 56px 80px;position:relative;overflow:hidden;}
 .page-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(2,146,183,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(2,146,183,.06) 1px,transparent 1px);background-size:72px 72px;}
 .ph-orb{position:absolute;pointer-events:none;border-radius:50%;}
 .ph-orb1{width:500px;height:500px;top:-100px;right:-80px;background:radial-gradient(circle,rgba(2,146,183,.15) 0%,transparent 70%);}
@@ -104,11 +104,28 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .socials a:hover{border-color:var(--teal);color:var(--teal-mid);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .f1{animation:fadeUp .5s ease .1s both;}.f2{animation:fadeUp .5s ease .22s both;}.f3{animation:fadeUp .5s ease .35s both;}
-@media(max-width:1050px){nav{padding:0 24px;}.wrap{padding:0 28px;}.page-hero{padding:120px 28px 64px;}.cta-sec{padding:80px 28px;}footer{padding:44px 28px 28px;}}
+@media(max-width:1050px){nav{padding:0 24px;}.wrap{padding:0 28px;}.page-hero{padding:140px 28px 64px;}.cta-sec{padding:80px 28px;}footer{padding:44px 28px 28px;}}
 @media(max-width:768px){.nav-links{display:none;}.ft-cols{flex-direction:column;gap:28px;}.ft-top{flex-direction:column;}}
 
 .blog-main{padding:100px 0;background:var(--white);}
 .blog-cta-block{text-align:center;max-width:580px;margin:0 auto 72px;}
+.blog-posts{display:flex;flex-direction:column;gap:24px;margin-bottom:72px;}
+.blog-card{display:flex;gap:28px;background:var(--off-white);border:1.5px solid var(--border);border-radius:14px;padding:24px;transition:all .25s;text-decoration:none;color:inherit;align-items:center;}
+.blog-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 28px rgba(2,146,183,.1);}
+.blog-card-thumb{width:200px;min-width:200px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:linear-gradient(145deg,var(--navy-dark),var(--navy));position:relative;flex-shrink:0;}
+.blog-card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.blog-card:hover .blog-card-thumb img{transform:scale(1.06);}
+.blog-card-thumb::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(2,146,183,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(2,146,183,.04) 1px,transparent 1px);background-size:20px 20px;opacity:.6;}
+.blog-card-body{flex:1;}
+.blog-card-pill{display:inline-block;background:rgba(2,146,183,.1);color:var(--teal);font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;margin-bottom:12px;}
+.blog-card-pill.purple{background:rgba(148,67,160,.1);color:var(--purple);}
+.blog-card-pill.navy{background:rgba(55,90,120,.1);color:var(--navy);}
+.blog-card h3{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.2rem;color:var(--navy-deep);margin-bottom:8px;letter-spacing:-.02em;line-height:1.25;}
+.blog-card p{font-size:.88rem;color:var(--text-muted);line-height:1.65;margin-bottom:12px;}
+.blog-card-meta{font-size:.76rem;color:var(--text-muted);display:flex;gap:12px;align-items:center;}
+.blog-card-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--border);}
+.blog-card-arrow{display:flex;align-items:center;justify-content:center;min-width:44px;font-size:1.1rem;color:var(--teal);opacity:.5;transition:opacity .2s;}
+.blog-card:hover .blog-card-arrow{opacity:1;}
 .blog-topics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:72px;}
 .btopic{background:var(--off-white);border:1.5px solid var(--border);border-radius:12px;padding:24px 22px;transition:all .2s;cursor:default;}
 .btopic:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 28px rgba(2,146,183,.1);}
@@ -124,11 +141,26 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .pod-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:7px;font-size:.76rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);transition:all .2s;}
 .pod-link:hover{border-color:var(--teal);color:var(--teal-mid);}
 @media(max-width:1050px){.blog-topics{grid-template-columns:1fr 1fr;}.pod-strip{flex-direction:column;}}
-@media(max-width:768px){.blog-topics{grid-template-columns:1fr;}}
+@media(max-width:768px){.blog-topics{grid-template-columns:1fr;}.blog-card{flex-direction:column;align-items:stretch;gap:16px;padding:20px;}.blog-card-thumb{width:100%;min-width:0;}.blog-card-arrow{display:none;}}
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}.reveal-d2{transition-delay:.16s;}.reveal-d3{transition-delay:.24s;}.reveal-d4{transition-delay:.32s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}.ph-orb1,.ph-orb2,.page-hero-grid{animation:none!important;}}
+/* Subtle orb float + grid drift */
+.ph-orb1{animation:float1 14s ease-in-out infinite;}
+.ph-orb2{animation:float2 18s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0);}50%{transform:translate(-24px,28px);}}
+@keyframes float2{0%,100%{transform:translate(0,0);}50%{transform:translate(28px,-20px);}}
+.page-hero-grid{animation:gridshift 22s linear infinite;}
+@keyframes gridshift{from{transform:translate(0,0);}to{transform:translate(72px,72px);}}
 
 .nav-logo { padding: 0; display: flex; align-items: center; }
-.nav-logo-img { height: 84px; width: auto; display: block; }
-.footer-logo-img { height: 100px; width: auto; display: block; opacity: 0.95; margin-bottom: 4px; }
+.nav-logo-img { height: 78px; width: auto; display: block; }
+.footer-logo-img { height: 72px; width: auto; display: block; opacity: 0.95; margin-bottom: 4px; }
 </style>
 </head>
 <body>
@@ -156,21 +188,451 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 <div class="marquee"><div class="mtrack"><span class="mi">Staffing Sales Strategy</span><span class="mi">Prospecting Tips</span><span class="mi">DISC in Sales</span><span class="mi">Job Order Growth</span><span class="mi">Leadership & Mindset</span><span class="mi">Industry Insights</span><span class="mi">Warm Intro Tactics</span><span class="mi">Staffing Sales Strategy</span><span class="mi">Prospecting Tips</span><span class="mi">DISC in Sales</span><span class="mi">Job Order Growth</span><span class="mi">Leadership & Mindset</span><span class="mi">Industry Insights</span><span class="mi">Warm Intro Tactics</span></div></div>
 <section class="blog-main">
   <div class="wrap">
-    <div class="blog-cta-block">
-      <div class="stag center">Read the Blog</div>
-      <h2 class="sh">The full blog lives<br><em>over here.</em></h2>
-      <p class="bt" style="margin-bottom:28px;">We publish regularly on staffing sales strategy, prospecting, DISC profiling, job order growth, and the real conversations no one else is having in the industry.</p>
-      <a href="https://www.myscoutleads.com/blog" class="btn-teal">Read the Blog →</a>
+    <div class="blog-cta-block reveal">
+      <div class="stag center">The Blog</div>
+      <h2 class="sh">No fluff. No filler.<br><em>Just what works.</em></h2>
+      <p class="bt" style="margin-bottom:28px;">Weekly insights on staffing sales strategy, prospecting, DISC profiling, job order growth, and the real conversations no one else is having in this industry.</p>
     </div>
+
+    <!-- BLOG POSTS - newest first -->
+    <div class="blog-posts">
+      
+      <a href="blog/why-your-staffing-sales-pipeline-is-lying-to-you.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/why-your-staffing-sales-pipeline-is-lying-to-you.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Why Your Staffing Sales Pipeline Is Lying to You</h3>
+          <p>Most staffing firms track pipeline activity like it tells the truth. It doesn't. Here's how to fix it.</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 14, 2026</span><span class="dot"></span><span>7 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/understanding-the-myscout-pricing-structure-for-leads.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/understanding-the-myscout-pricing-structure-for-leads.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Product Update</div>
+          <h3>Understanding the MyScout Pricing Structure for Leads</h3>
+          <p>When it comes to staffing and recruiting, leads are the lifeblood of your sales pipeline. But not all leads are created equal, and understan</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 13, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/tariffs-reshoring-and-the-staffing-opportunity-nobody-is-talking-about.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/tariffs-reshoring-and-the-staffing-opportunity-nobody-is-talking-about.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Tariffs, Reshoring, and the Staffing Opportunity Nobody's Talking About</h3>
+          <p>The tariff economy froze white-collar hiring. But it's lighting manufacturing, construction, and industrial on fire.</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 13, 2026</span><span class="dot"></span><span>7 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/why-generic-ai-sales-tools-wont-work-for-staffing.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/why-generic-ai-sales-tools-wont-work-for-staffing.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Why Generic AI Sales Tools Won't Work for Staffing</h3>
+          <p>81% of sales teams are using AI now. But most AI prospecting tools were built for SaaS, not staffing.</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 13, 2026</span><span class="dot"></span><span>7 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/the-staffing-market-is-splitting-in-two.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/the-staffing-market-is-splitting-in-two.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>The Staffing Market is Splitting in Two</h3>
+          <p>The 2026 staffing market is growing at 2% — but that hides a tale of two markets. White-collar is soft. Industrial is on fire.</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 11, 2026</span><span class="dot"></span><span>7 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/why-choose-myscout-leads-for-your-sales-unlocking-myscout-lead-benefits.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/why-choose-myscout-leads-for-your-sales-unlocking-myscout-lead-benefits.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Product Update</div>
+          <h3>Why Choose MyScout Leads for Your Sales? Unlocking MyScout Lead Benefits</h3>
+          <p>In the fast-paced world of staffing and recruiting, finding the right leads can make or break your sales success. You need a partner who und</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 09, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/understanding-myscout-lead-pricing-structure-for-better-roi.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/understanding-myscout-lead-pricing-structure-for-better-roi.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Product Update</div>
+          <h3>Understanding MyScout Lead Pricing Structure for Better ROI</h3>
+          <p>When it comes to staffing and recruiting, every lead counts. But how do you make sure you’re getting the best bang for your buck? Understand</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 09, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/enhancing-sales-processes-with-myscout-sales-leads.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/enhancing-sales-processes-with-myscout-sales-leads.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Product Update</div>
+          <h3>Enhancing Sales Processes with myscout sales leads</h3>
+          <p>In the fast-paced world of staffing and recruiting, staying ahead means constantly refining your sales process. You want to connect with the</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 09, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/unlocking-remote-prospecting-training-benefits-why-it-s-a-game-changer-for-sales-teams.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/unlocking-remote-prospecting-training-benefits-why-it-s-a-game-changer-for-sales-teams.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Industry Insight</div>
+          <h3>Unlocking remote prospecting training benefits: Why it’s a game changer for sales teams</h3>
+          <p>Sales prospecting is the lifeblood of any staffing or recruiting business. But let’s face it - the traditional ways of training sales teams </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>April 01, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/mastering-the-art-of-staffing-sales-how-to-secure-verified-c-suite-contacts-in-philadelphia.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/mastering-the-art-of-staffing-sales-how-to-secure-verified-c-suite-contacts-in-philadelphia.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Mastering the Art of Staffing Sales: How to Secure Verified C-Suite Contacts in Philadelphia</h3>
+          <p>Connecting with Chief Operating Officers (COOs) in the Greater Philadelphia’s staffing market is a challenge many recruiters face. The execu</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 31, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/unlocking-success-for-staffing-agencies-in-philadelphia-with-bespoke-prospect-intelligence.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/unlocking-success-for-staffing-agencies-in-philadelphia-with-bespoke-prospect-intelligence.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Unlocking Success for Staffing Agencies in Philadelphia with Bespoke Prospect Intelligence</h3>
+          <p>Staffing agencies in Philadelphia face a common challenge: finding verified, up-to-date leads that convert into meaningful client relationsh</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 31, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/proven-strategies-to-improve-staffing-operations.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/proven-strategies-to-improve-staffing-operations.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Proven Strategies to Improve Staffing Operations</h3>
+          <p>Staffing efficiency is the backbone of any successful recruitment or sales team. When your staffing operations run smoothly, everything else</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 30, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/the-hidden-cost-of-admin-tasks-in-sales-and-how-myscout-transforms-prospecting-efforts.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/the-hidden-cost-of-admin-tasks-in-sales-and-how-myscout-transforms-prospecting-efforts.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>The Hidden Costs of Non-Selling Tasks in Sales Teams</h3>
+          <p>You're getting robbed and it's your fault. If your &amp;quot;closers&amp;quot; are spending 40% of their day acting like private investigators, you </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 27, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/recruiting-strategies-for-success-effective-recruiting-tips-to-attract-top-talent.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/recruiting-strategies-for-success-effective-recruiting-tips-to-attract-top-talent.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Recruiting Strategies for Success: Effective Recruiting Tips to Attract Top Talent</h3>
+          <p>Finding the right people for your team is no walk in the park. The competition for top talent is fierce, and the stakes are high. You want c</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 09, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/how-bespoke-prospect-intelligence-is-revolutionizing-staffing-agencies-and-reducing-recruiter-burnou.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/how-bespoke-prospect-intelligence-is-revolutionizing-staffing-agencies-and-reducing-recruiter-burnou.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>How Bespoke Prospect Intelligence is Revolutionizing Staffing Agencies and Reducing Recruiter Burnout</h3>
+          <p>Staffing agencies face a constant challenge: finding the right leads that convert into placements without exhausting their recruiters. Tradi</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 02, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/qualified-staffing-solutions-your-online-guide-to-staffing-success.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/qualified-staffing-solutions-your-online-guide-to-staffing-success.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Qualified Staffing Solutions: Your Online Guide to Staffing Success</h3>
+          <p>Finding the right talent fast is a game-changer. Whether you’re leading a staffing agency or managing recruitment sales, knowing how to tap </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>March 02, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/staffing-efficiency-improvement-top-strategies-to-boost-your-team-s-performance.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/staffing-efficiency-improvement-top-strategies-to-boost-your-team-s-performance.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Staffing Efficiency Improvement: Top Strategies to Boost Your Team’s Performance</h3>
+          <p>Staffing efficiency is the backbone of any successful recruitment or sales operation. When your team runs like a well-oiled machine, everyth</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>February 23, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/combat-recruiter-burnout-for-team-success.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/combat-recruiter-burnout-for-team-success.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Combat Recruiter Burnout for Team Success</h3>
+          <p>Recruiting is a high-stakes game. Every day, recruiters juggle dozens of candidates, hiring managers, and deadlines. It’s fast-paced, demand</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>February 16, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/boost-remote-sales-with-expert-remote-sales-training-methods.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/boost-remote-sales-with-expert-remote-sales-training-methods.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Industry Insight</div>
+          <h3>Boost Remote Sales with Expert Remote Sales Training Methods</h3>
+          <p>Selling remotely is no longer just a trend - it’s the new normal. But here’s the catch: remote sales require a different set of skills than </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>February 16, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/key-traits-of-effective-sales-leadership.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/key-traits-of-effective-sales-leadership.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill navy">Leadership</div>
+          <h3>Key Traits of Effective Sales Leadership</h3>
+          <p>Sales leadership is a unique blend of skills, mindset, and behaviors that drive teams to hit targets and grow revenue. But what exactly make</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>February 09, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/mastering-sales-goal-strategies-the-importance-of-meeting-sales-goals.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/mastering-sales-goal-strategies-the-importance-of-meeting-sales-goals.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Mastering Sales Goal Strategies: The Importance of Meeting Sales Goals</h3>
+          <p>Sales goals are more than just numbers on a spreadsheet. They’re the heartbeat of any thriving sales team, especially in staffing and recrui</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>February 02, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/staffing-efficiency-strategies-enhancing-workforce-efficiency-with-qualified-staffing.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/staffing-efficiency-strategies-enhancing-workforce-efficiency-with-qualified-staffing.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Staffing Efficiency Strategies: Enhancing Workforce Efficiency with Qualified Staffing</h3>
+          <p>When it comes to building a high-performing team, efficiency is king. You want your workforce to be productive, motivated, and aligned with </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>January 26, 2026</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/mastering-the-art-of-effective-lead-generation.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/mastering-the-art-of-effective-lead-generation.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Mastering the Art of Effective Lead Generation</h3>
+          <p>Getting the right leads is the lifeblood of any staffing or recruiting business. Without a steady stream of potential clients or candidates,</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>January 26, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/top-recruitment-training-methods-to-consider.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/top-recruitment-training-methods-to-consider.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Top Recruitment Training Methods to Consider</h3>
+          <p>Recruiting is an art and a science. It’s about finding the right people, at the right time, for the right roles. But how do you sharpen thos</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>January 19, 2026</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/find-and-convert-targeted-sales-leads-mastering-the-art-of-identifying-sales-prospects.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/find-and-convert-targeted-sales-leads-mastering-the-art-of-identifying-sales-prospects.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Find and Convert Targeted Sales Leads: Mastering the Art of Identifying Sales Prospects</h3>
+          <p>Finding the right sales leads is like hunting for treasure. You want to zero in on those prospects who are not just interested but ready to </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>January 12, 2026</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/achieve-your-sales-goals-consistently-with-proven-sales-target-strategies.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/achieve-your-sales-goals-consistently-with-proven-sales-target-strategies.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Achieve Your Sales Goals Consistently with Proven Sales Target Strategies</h3>
+          <p>Hitting your sales goals isn’t just about luck or working harder. It’s about working smarter. If you want to consistently crush your targets</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>December 22, 2025</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/generate-sales-leads-effectively-with-proven-strategies.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/generate-sales-leads-effectively-with-proven-strategies.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Generate Sales Leads Effectively with Proven Strategies</h3>
+          <p>Generating sales leads is the lifeblood of any staffing or recruiting business. Without a steady stream of potential clients and candidates,</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>December 15, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/discover-proven-tactics-for-targeted-sales-leads.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/discover-proven-tactics-for-targeted-sales-leads.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Effective Strategies for Targeted Sales Leads</h3>
+          <p>Finding the Right Sales Leads: Proven Strategies for Success=============================================================Finding the right s</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>November 04, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/master-targeted-sales-leads-for-growth.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/master-targeted-sales-leads-for-growth.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Master Generating Targeted Sales Leads</h3>
+          <p>Sales growth isn’t just about working harder. It’s about working smarter. And that means mastering targeted sales strategies that connect yo</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>October 20, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/effective-strategies-to-generate-targeted-sales-leads.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/effective-strategies-to-generate-targeted-sales-leads.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Generate Targeted Sales Leads Effectively</h3>
+          <p>Generating quality leads is the lifeblood of any staffing sales operation. But not just any leads will do. You want targeted leads - the kin</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>October 13, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/qualified-staffing-solutions-for-your-business-needs.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/qualified-staffing-solutions-for-your-business-needs.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Your Guide to Qualified Staffing Solutions</h3>
+          <p>Finding the right people for your team is no small feat. It’s a challenge that every staffing sales leader and recruiter knows all too well.</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>October 09, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/top-sales-efficiency-tools-for-better-results.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/top-sales-efficiency-tools-for-better-results.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Best Tools to Boost Sales Efficiency</h3>
+          <p>Sales is a fast-paced game. You need to be sharp, quick, and smart. The right tools can make all the difference. They help you save time, cl</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>September 26, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/proven-methods-for-staffing-agency-growth.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/proven-methods-for-staffing-agency-growth.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>How to Grow Your Staffing Agency Effectively</h3>
+          <p>Growing a staffing agency is a challenging yet rewarding endeavor. The staffing industry is competitive, and agencies must continuously adap</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>September 26, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/effective-strategies-for-finding-targeted-sales-leads.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/effective-strategies-for-finding-targeted-sales-leads.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Effective Ways to Target Sales Leads</h3>
+          <p>Finding the right customers is crucial for any business aiming to grow and succeed. However, not all leads are created equal. To maximize sa</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>September 26, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/easy-doesn-t-build-wealth-it-builds-regret.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/easy-doesn-t-build-wealth-it-builds-regret.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill navy">Leadership</div>
+          <h3>The Allure &amp;amp; Danger of Shortcuts in Sales Leadership</h3>
+          <p>Understanding the Temptation of ShortcutsIt’s human nature to seek the path of least resistance. We all crave quick wins, simple fixes, and </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 26, 2025</span><span class="dot"></span><span>3 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/comfort-zones-are-where-potential-goes-to-die.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/comfort-zones-are-where-potential-goes-to-die.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill navy">Leadership</div>
+          <h3>Comfort Zones Are Where Potential Goes to Die</h3>
+          <p>What We've Always Done: The Most Expensive Phrase in BusinessThe Subtle Trap of Comfort: Why It’s So DangerousImagine a team that starts eve</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 26, 2025</span><span class="dot"></span><span>3 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/the-real-reason-recruiters-burn-out-and-it-s-not-long-hours.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/the-real-reason-recruiters-burn-out-and-it-s-not-long-hours.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>The Real Reason Recruiters Burn Out.  And It’s Not Long Hours</h3>
+          <p>Burnout isn’t about working too hard. It’s about working on the wrong things - and feeling alone while doing it. A Day in the Life: Why Burn</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 26, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/accountability-isn-t-a-punishment-it-s-the-shortcut-to-results.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/accountability-isn-t-a-punishment-it-s-the-shortcut-to-results.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill navy">Leadership</div>
+          <h3>Accountability Isn’t a Punishment. It’s the Shortcut to Results.</h3>
+          <p>Leaders avoid accountability because it feels harsh. The truth? It’s the fastest way to growth.The Accountability Misconception in StaffingI</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 25, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/the-prospecting-trap-why-your-reps-spend-half-their-day-wasting-time.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/the-prospecting-trap-why-your-reps-spend-half-their-day-wasting-time.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>The Prospecting Trap: Why Your Reps Spend Half Their Day Wasting Time</h3>
+          <p>Most staffing sales reps aren’t selling — they’re chasing names in massive, outdated databases.The Hidden Cost of Traditional ProspectingIn </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 25, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/myscout-a-new-name-in-staffing-sales-already-earning-attention.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/myscout-a-new-name-in-staffing-sales-already-earning-attention.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>myScout: A New Name in Staffing Sales, Already Earning Attention</h3>
+          <p>myScout is proud to be recognized for early excellence!</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 20, 2025</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/redefining-impact-fit-how-i-learned-to-hire-for-skills-and-culture-over-old-school-mentality.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/redefining-impact-fit-how-i-learned-to-hire-for-skills-and-culture-over-old-school-mentality.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Redefining Impact Fit How I Learned to Hire for Skills and Culture Over Old-School Mentality</h3>
+          <p>In today's fast-paced job market, traditional methods of hiring are increasingly becoming outdated. As a hiring manager, I've seen firsthand</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 13, 2025</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/pay-transparency-in-2025-why-it-s-no-longer-just-an-hr-trend.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/pay-transparency-in-2025-why-it-s-no-longer-just-an-hr-trend.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Industry Insight</div>
+          <h3>Pay Transparency in 2025 Why It’s No Longer Just an HR Trend</h3>
+          <p>In recent years, pay transparency has transitioned from a mere trend to an essential expectation among job seekers. As we near 2025, candida</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>August 13, 2025</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/unlocking-talent-5-must-do-strategies-for-recruiters-to-find-top-candidates.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/unlocking-talent-5-must-do-strategies-for-recruiters-to-find-top-candidates.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill purple">Staffing Strategy</div>
+          <h3>Unlocking Talent: 5 Must-Do Strategies for Recruiters to Find Top Candidates</h3>
+          <p>Finding the right talent is crucial for any organization looking to thrive in today’s competitive environment. Recruiters play a vital role </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>July 28, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/how-to-leverage-ai-5-essential-strategies-you-must-implement-now.html" class="blog-card reveal reveal-d4"><div class="blog-card-thumb"><img src="images/blog/how-to-leverage-ai-5-essential-strategies-you-must-implement-now.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Industry Insight</div>
+          <h3>How to Leverage AI: 5 Essential Strategies You Must Implement Now</h3>
+          <p>Artificial Intelligence (AI) is changing the way we tackle everyday tasks, making processes quicker, smoother, and more efficient. As AI tec</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>July 14, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/how-i-discovered-the-perfect-lead-generation-partner-to-skyrocket-my-sales-results.html" class="blog-card reveal reveal-d1"><div class="blog-card-thumb"><img src="images/blog/how-i-discovered-the-perfect-lead-generation-partner-to-skyrocket-my-sales-results.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Unlocking Sales Success: My Journey to Finding the Ideal Lead Generation Partner</h3>
+          <p>When I started my sales journey, generating quality leads felt like an uphill battle. I spent countless hours researching, networking, and t</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>June 24, 2025</span><span class="dot"></span><span>2 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/how-to-skyrocket-your-meeting-success-with-3-game-changing-tips-for-sales-pros.html" class="blog-card reveal reveal-d2"><div class="blog-card-thumb"><img src="images/blog/how-to-skyrocket-your-meeting-success-with-3-game-changing-tips-for-sales-pros.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>How to Skyrocket Your Meeting Success with 3 Game-Changing Tips for Sales Pros</h3>
+          <p>As a sales professional, enhancing your outreach is always top of mind. Whether you are an experienced account manager or new to sales, the </p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>June 24, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+      <a href="blog/uncover-the-top-5-hidden-reasons-you-re-not-closing-sales-deals-like-a-pro.html" class="blog-card reveal reveal-d3"><div class="blog-card-thumb"><img src="images/blog/uncover-the-top-5-hidden-reasons-you-re-not-closing-sales-deals-like-a-pro.jpg" alt="" onerror="this.style.display='none'"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-pill teal">Sales Strategy</div>
+          <h3>Uncover the Top 5 Hidden Reasons You're Not Closing Sales Deals Like a Pro</h3>
+          <p>Sales can feel like a rollercoaster ride, brimming with excitement and challenges. While some salespeople effortlessly close deals, others f</p>
+          <div class="blog-card-meta"><span>Tiffany Scott</span><span class="dot"></span><span>June 24, 2025</span><span class="dot"></span><span>1 min read</span></div>
+        </div>
+        <div class="blog-card-arrow">→</div>
+      </a>
+    
+    </div>
+    <!-- END BLOG POSTS -->
+
     <div class="blog-topics">
-      <div class="btopic"><div class="btopic-icon">🎯</div><div class="btopic-title">Prospecting Strategy</div><p class="btopic-desc">How to find the right companies, identify buying signals, and stop wasting time on prospects that will never convert.</p></div>
-      <div class="btopic"><div class="btopic-icon">🧠</div><div class="btopic-title">DISC in Sales</div><p class="btopic-desc">How to use behavioral profiles to tailor your pitch, your timing, and your communication style to each buyer.</p></div>
-      <div class="btopic"><div class="btopic-icon">🔥</div><div class="btopic-title">Warm Intro Tactics</div><p class="btopic-desc">Turning your existing network into your most powerful sales tool — without being awkward about it.</p></div>
-      <div class="btopic"><div class="btopic-icon">📈</div><div class="btopic-title">Job Order Growth</div><p class="btopic-desc">Practical frameworks for increasing your job order volume without burning out your team or your pipeline.</p></div>
-      <div class="btopic"><div class="btopic-icon">💬</div><div class="btopic-title">Sales Conversations</div><p class="btopic-desc">How to open, navigate, and close conversations with staffing buyers — including the hard ones.</p></div>
-      <div class="btopic"><div class="btopic-icon">🏢</div><div class="btopic-title">Industry Insights</div><p class="btopic-desc">What's actually happening in the staffing industry and what it means for your sales strategy right now.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">🎯</div><div class="btopic-title">Prospecting Strategy</div><p class="btopic-desc">How to find the right companies, identify buying signals, and stop wasting time on prospects that will never convert.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">🧠</div><div class="btopic-title">DISC in Sales</div><p class="btopic-desc">How to use behavioral profiles to tailor your pitch, your timing, and your communication style to each buyer.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">🔥</div><div class="btopic-title">Warm Intro Tactics</div><p class="btopic-desc">Turning your existing network into your most powerful sales tool — without being awkward about it.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">📈</div><div class="btopic-title">Job Order Growth</div><p class="btopic-desc">Practical frameworks for increasing your job order volume without burning out your team or your pipeline.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">💬</div><div class="btopic-title">Sales Conversations</div><p class="btopic-desc">How to open, navigate, and close conversations with staffing buyers — including the hard ones.</p></div>
+      <div class="btopic reveal"><div class="btopic-icon">🏢</div><div class="btopic-title">Industry Insights</div><p class="btopic-desc">What's actually happening in the staffing industry and what it means for your sales strategy right now.</p></div>
     </div>
-    <div class="pod-strip">
+    <div class="pod-strip reveal-scale">
       <div>
         <div class="pod-tag">Podcast</div>
         <div class="pod-title">Out of Line with Tiffany Scott</div>
@@ -188,9 +650,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   <div class="cta-orb"></div>
   <div class="cta-in">
     <div class="stag center teal">Platform</div>
-    <h2>Ready to make<br><em>the kill?</em></h2>
-    <p>Start free — 50 credits, no card required. Or book a call and let's talk about what your pipeline needs.</p>
-    <div class="cta-btns"><a href="https://app.myscout.ai" class="btn-teal">Start Free Today →</a><a href="contact.html" class="btn-ghost">Contact Us</a></div>
+    <h2 class="reveal">Ready to make<br><em>the kill?</em></h2>
+    <p class="reveal reveal-d1">Start free — 50 credits, no card required. Or book a call and let's talk about what your pipeline needs.</p>
+    <div class="cta-btns reveal reveal-d2"><a href="https://app.myscout.ai" class="btn-teal">Start Free Today →</a><a href="contact.html" class="btn-ghost">Contact Us</a></div>
   </div>
 </section>
 
@@ -235,5 +697,15 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   <img src="images/myScout_Faviction_Logo.png" alt="Chat">
   <span class="chat-close">✕</span>
 </button>
+
+<script>
+/* Scroll reveal */
+(function(){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
