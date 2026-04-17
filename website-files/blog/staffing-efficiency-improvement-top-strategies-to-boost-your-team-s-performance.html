@@ -121,6 +121,30 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 @media(max-width:1050px){nav{padding:0 24px;}article{padding:56px 28px 80px;}.page-hero{padding:140px 28px 52px;}.cta-sec{padding:80px 28px;}footer{padding:44px 28px 28px;}}
 @media(max-width:768px){.nav-links{display:none;}.ft-cols{flex-direction:column;gap:28px;}.ft-top{flex-direction:column;}}
 </style>
+
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6D4ST6YYL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z6D4ST6YYL');
+</script>
+<!-- Meta (Facebook) Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '854934814211526');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=854934814211526&ev=PageView&noscript=1"/></noscript>
+
 </head>
 <body>
 <nav>
