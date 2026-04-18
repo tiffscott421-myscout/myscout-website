@@ -168,6 +168,17 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .nav-logo { padding: 0; display: flex; align-items: center; }
 .nav-logo-img { height: 84px; width: auto; display: block; }
 .footer-logo-img { height: 100px; width: auto; display: block; opacity: 0.95; margin-bottom: 4px; }
+
+/* Podcast section */
+.pod-strip{background:var(--navy-deep);border-radius:16px;padding:38px 44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;}
+.pod-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--purple));}
+.pod-tag{display:inline-block;background:rgba(148,67,160,.2);border:1px solid rgba(148,67,160,.35);color:var(--purple-mid);font-size:.63rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
+.pod-title{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.25rem;color:var(--white);letter-spacing:-.02em;margin-bottom:6px;}
+.pod-desc{font-size:.84rem;color:rgba(255,255,255,.45);max-width:420px;line-height:1.6;}
+.pod-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
+.pod-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:7px;font-size:.76rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);transition:all .2s;}
+.pod-link:hover{border-color:var(--teal);color:var(--teal-mid);}
+.pod-strip{flex-direction:column;}
 </style>
 
 <!-- Google Analytics (GA4) -->
