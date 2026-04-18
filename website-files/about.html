@@ -128,6 +128,28 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .mobile-backdrop.open{opacity:1;pointer-events:auto;}
 @media(max-width:768px){.mobile-toggle{display:flex;}}
 
+
+/* Trust signals strip */
+.trust-strip{padding:56px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.ts-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;text-align:center;max-width:1100px;margin:0 auto;}
+.ts-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:0 18px;border-right:1px solid var(--border);min-height:80px;}
+.ts-item:last-child{border-right:none;}
+.ts-num{font-family:'Outfit',sans-serif;font-weight:900;font-size:2.4rem;color:var(--teal);letter-spacing:-.04em;line-height:1;}
+.ts-num.text{font-size:1.3rem;font-weight:800;color:var(--navy-deep);}
+.ts-label{font-size:.68rem;font-weight:700;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase;line-height:1.3;}
+@media(max-width:1050px){
+  .ts-grid{grid-template-columns:repeat(2,1fr);gap:0;}
+  .ts-item{border-right:none;border-bottom:1px solid var(--border);padding:20px 12px;}
+  .ts-item:nth-child(odd){border-right:1px solid var(--border);}
+  .ts-item:nth-child(4),.ts-item:nth-child(5){border-bottom:none;}
+  .ts-item:last-child{grid-column:span 2;border-right:none;}
+}
+@media(max-width:500px){
+  .ts-grid{grid-template-columns:1fr;}
+  .ts-item{border-right:none!important;border-bottom:1px solid var(--border);padding:16px 12px;}
+  .ts-item:last-child{grid-column:auto;border-bottom:none;}
+}
+
 @media(max-width:1050px){nav{padding:0 24px;}.wrap{padding:0 28px;}.page-hero{padding:120px 28px 64px;}.cta-sec{padding:80px 28px;}footer{padding:44px 28px 28px;}}
 @media(max-width:768px){.nav-links{display:none;}.ft-cols{flex-direction:column;gap:28px;}.ft-top{flex-direction:column;}}
 
@@ -198,6 +220,7 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=854934814211526&ev=PageView&noscript=1" alt=""></noscript>
 
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Tiffany Scott", "givenName": "Tiffany", "familyName": "Scott", "jobTitle": "Founder & CEO", "worksFor": {"@type": "Organization", "name": "myScout", "url": "https://www.myscout.ai"}, "url": "https://www.myscout.ai/about", "image": "https://www.myscout.ai/images/tiffany-headshot.jpg", "description": "Founder & CEO of myScout. 20+ years in staffing, former COO at PeopleShare, host of the Out of Line podcast.", "sameAs": ["https://www.linkedin.com/in/tiffscott/"], "knowsAbout": ["Staffing Sales", "Sales Intelligence", "Recruiting", "DISC Personality Profiling", "B2B Prospecting", "Staffing Agency Growth"], "alumniOf": {"@type": "Organization", "name": "PeopleShare"}}</script>
 </head>
 <body>
 <nav>
@@ -282,6 +305,35 @@ fbq('track', 'PageView');
     </div>
   </div>
 </section>
+
+<!-- Trust Signals -->
+<section class="trust-strip reveal">
+  <div class="wrap">
+    <div class="ts-grid">
+      <div class="ts-item">
+        <div class="ts-num">20<span style="color:var(--teal-bright)">+</span></div>
+        <div class="ts-label">Years in Staffing</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num text">Former COO</div>
+        <div class="ts-label">PeopleShare</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num">31</div>
+        <div class="ts-label">Data Sources</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num">40<span style="color:var(--purple)">+</span></div>
+        <div class="ts-label">Data Points Per Prospect</div>
+      </div>
+      <div class="ts-item">
+        <div class="ts-num">47</div>
+        <div class="ts-label">Articles Published</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="diff-section">
   <div class="wrap">
     <div class="stag teal" style="position:relative;z-index:1;">Why myScout</div>
