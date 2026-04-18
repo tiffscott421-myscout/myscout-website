@@ -31,6 +31,39 @@
   ],
   "redirects": [
     {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "myscoutleads.com"
+        }
+      ],
+      "destination": "https://www.myscout.ai/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.myscoutleads.com"
+        }
+      ],
+      "destination": "https://www.myscout.ai/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "myscout.ai"
+        }
+      ],
+      "destination": "https://www.myscout.ai/$1",
+      "permanent": true
+    },
+    {
       "source": "/pricing",
       "destination": "/",
       "permanent": false
