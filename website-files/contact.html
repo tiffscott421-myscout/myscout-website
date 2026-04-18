@@ -183,6 +183,32 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .pod-link{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:7px;font-size:.76rem;font-weight:700;text-decoration:none;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65);transition:all .2s;}
 .pod-link:hover{border-color:var(--teal);color:var(--teal-mid);}
 .pod-strip{flex-direction:column;}
+
+/* Contact form */
+.contact-form-section{padding:80px 0;background:var(--white);border-top:1px solid var(--border);}
+.cf-intro{text-align:center;max-width:560px;margin:0 auto 36px;}
+.cf-form{display:grid;gap:18px;max-width:680px;margin:0 auto;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cf-field{display:flex;flex-direction:column;gap:6px;}
+.cf-field label{font-size:.72rem;font-weight:800;color:var(--navy-deep);letter-spacing:.08em;text-transform:uppercase;}
+.cf-req{color:var(--purple);margin-left:2px;}
+.cf-field input,.cf-field textarea{font-family:'Outfit',sans-serif;font-size:.95rem;padding:12px 16px;border:1.5px solid var(--border);border-radius:8px;background:var(--white);color:var(--navy-deep);transition:border-color .2s,box-shadow .2s;}
+.cf-field textarea{resize:vertical;min-height:120px;}
+.cf-field input:focus,.cf-field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(2,146,183,.15);}
+.cf-field input:invalid:not(:placeholder-shown),.cf-field textarea:invalid:not(:placeholder-shown){border-color:#E8A4A4;}
+.cf-submit{background:var(--teal);color:var(--white);padding:14px 32px;border-radius:7px;font-size:.92rem;font-weight:700;font-family:'Outfit',sans-serif;border:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;margin-top:8px;position:relative;min-height:48px;}
+.cf-submit:hover{background:var(--teal-bright);box-shadow:0 0 32px rgba(7,184,224,.4);transform:translateY(-2px);}
+.cf-submit:disabled{opacity:.85;cursor:wait;transform:none;}
+.cf-btn-spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:var(--white);border-radius:50%;animation:cf-spin .8s linear infinite;display:none;}
+.cf-submit.loading .cf-btn-text{opacity:0;}
+.cf-submit.loading .cf-btn-spinner{display:block;position:absolute;}
+@keyframes cf-spin{to{transform:rotate(360deg);}}
+.cf-status{min-height:20px;text-align:center;font-size:.9rem;font-weight:600;padding:0;border-radius:8px;transition:all .3s;margin-top:4px;}
+.cf-status.success{color:#1F6A3D;background:#E8F5EE;border:1px solid #A3D9B8;padding:14px 18px;}
+.cf-status.error{color:#A83232;background:#FDF0F0;border:1px solid #E8B4B4;padding:14px 18px;}
+.cf-honeypot{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}
+@media(max-width:640px){.cf-row{grid-template-columns:1fr;}}
+
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -281,6 +307,51 @@ fbq('track', 'PageView');
     </div>
   </div>
 </section>
+
+
+<!-- Contact form -->
+<section class="contact-form-section">
+  <div class="wrap">
+    <div class="cf-intro">
+      <div class="stag center">Message Us</div>
+      <h2 class="sh" style="margin-bottom:12px;">Prefer to write it out?<br><em>Send us a note.</em></h2>
+      <p class="bt">Tell us about your pipeline, your team, or whatever's on your mind. Real people read these. You'll hear back within 1 business day.</p>
+    </div>
+    <form id="contactForm" action="https://usebasin.com/f/4f92f6e7f905" method="POST" class="cf-form" novalidate>
+      <input type="text" name="_gotcha" class="cf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-name">Name <span class="cf-req">*</span></label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name" placeholder="Jane Smith">
+        </div>
+        <div class="cf-field">
+          <label for="cf-email">Email <span class="cf-req">*</span></label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email" placeholder="jane@company.com">
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-company">Company</label>
+          <input type="text" id="cf-company" name="company" autocomplete="organization" placeholder="Acme Staffing">
+        </div>
+        <div class="cf-field">
+          <label for="cf-phone">Phone</label>
+          <input type="tel" id="cf-phone" name="phone" autocomplete="tel" placeholder="555-123-4567">
+        </div>
+      </div>
+      <div class="cf-field">
+        <label for="cf-message">Message <span class="cf-req">*</span></label>
+        <textarea id="cf-message" name="message" required rows="5" placeholder="Tell us about your pipeline, what you've tried, and what's working or not."></textarea>
+      </div>
+      <button type="submit" class="cf-submit">
+        <span class="cf-btn-text">Send message &rarr;</span>
+        <span class="cf-btn-spinner" aria-hidden="true"></span>
+      </button>
+      <div class="cf-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
 
 <!-- FAQ -->
 <section style="padding:100px 0;background:var(--off-white);border-top:1px solid var(--border);">
@@ -390,5 +461,47 @@ fbq('track', 'PageView');
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
+
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  var btn = form.querySelector('.cf-submit');
+  var status = form.querySelector('.cf-status');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    // Native validity check (we set novalidate so we can style errors ourselves)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    btn.classList.add('loading');
+    btn.disabled = true;
+    status.textContent = '';
+    status.className = 'cf-status';
+    try {
+      var res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        form.reset();
+        status.textContent = '✓ Message sent. We will get back to you within 1 business day.';
+        status.className = 'cf-status success';
+      } else {
+        throw new Error('Submit failed: ' + res.status);
+      }
+    } catch(err) {
+      status.textContent = '✗ Something went wrong. Please try again or email GameOn@myScoutLeads.com directly.';
+      status.className = 'cf-status error';
+    } finally {
+      btn.classList.remove('loading');
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
