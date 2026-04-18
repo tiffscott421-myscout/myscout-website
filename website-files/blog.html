@@ -104,6 +104,26 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .socials a:hover{border-color:var(--teal);color:var(--teal-mid);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .f1{animation:fadeUp .5s ease .1s both;}.f2{animation:fadeUp .5s ease .22s both;}.f3{animation:fadeUp .5s ease .35s both;}
+
+/* Mobile hamburger nav */
+.mobile-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px;z-index:202;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px;}
+.mobile-toggle span{display:block;width:24px;height:2px;background:var(--navy-deep);border-radius:2px;transition:all .3s cubic-bezier(.25,.46,.45,.94);}
+.mobile-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.mobile-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.mobile-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{position:fixed;top:0;right:-100%;width:82%;max-width:340px;height:100vh;background:var(--navy-deep);z-index:201;transition:right .4s cubic-bezier(.25,.46,.45,.94);padding:110px 28px 28px;box-shadow:-8px 0 32px rgba(0,0,0,.25);overflow-y:auto;}
+.mobile-menu.open{right:0;}
+.mobile-menu ul{list-style:none;padding:0;margin:0;}
+.mobile-menu li{border-bottom:1px solid rgba(255,255,255,.08);}
+.mobile-menu li:last-child{border-bottom:none;margin-top:16px;}
+.mobile-menu a{display:block;padding:16px 4px;color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;font-weight:600;transition:color .2s;}
+.mobile-menu a:hover,.mobile-menu a.active{color:var(--teal-bright);}
+.mobile-menu .mobile-cta{background:var(--teal);color:var(--white)!important;text-align:center;border-radius:8px;padding:14px 20px;}
+.mobile-menu .mobile-cta:hover{background:var(--teal-bright);}
+.mobile-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:200;opacity:0;pointer-events:none;transition:opacity .3s;}
+.mobile-backdrop.open{opacity:1;pointer-events:auto;}
+@media(max-width:768px){.mobile-toggle{display:flex;}}
+
 @media(max-width:1050px){nav{padding:0 24px;}.wrap{padding:0 28px;}.page-hero{padding:140px 28px 64px;}.cta-sec{padding:80px 28px;}footer{padding:44px 28px 28px;}}
 @media(max-width:768px){.nav-links{display:none;}.ft-cols{flex-direction:column;gap:28px;}.ft-top{flex-direction:column;}}
 
@@ -199,6 +219,18 @@ fbq('track', 'PageView');
     <li><a href="https://app.myscout.ai" class="nav-cta">Try Free →</a></li>
   </ul>
 </nav>
+
+<button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+<div class="mobile-backdrop" id="mobileBackdrop"></div>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><ul>
+  <li><a href="what-we-do.html">What We Do</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="pricing.html">Pricing</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="https://app.myscout.ai" class="mobile-cta">Try Free &rarr;</a></li>
+</ul></nav>
+
 
 <section class="page-hero">
   <div class="page-hero-grid"></div>
@@ -729,6 +761,26 @@ fbq('track', 'PageView');
     entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
   },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal,.reveal-scale').forEach(el=>io.observe(el));
+})();
+</script>
+
+<script>
+(function(){
+  var toggle=document.getElementById('mobileToggle');
+  var menu=document.getElementById('mobileMenu');
+  var backdrop=document.getElementById('mobileBackdrop');
+  if(!toggle||!menu)return;
+  function setOpen(open){
+    toggle.setAttribute('aria-expanded',open);
+    menu.classList.toggle('open',open);
+    if(backdrop)backdrop.classList.toggle('open',open);
+    document.body.style.overflow=open?'hidden':'';
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+  }
+  toggle.addEventListener('click',function(){setOpen(!menu.classList.contains('open'));});
+  if(backdrop)backdrop.addEventListener('click',function(){setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setOpen(false);});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
 </body>
