@@ -51,6 +51,15 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=854934814211526&ev=PageView&noscript=1" alt=""/></noscript>
 
 <style>
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}.reveal-d2{transition-delay:.16s;}.reveal-d3{transition-delay:.24s;}.reveal-d4{transition-delay:.32s;}.reveal-d5{transition-delay:.4s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}.ph-orb1,.ph-orb2,.page-hero-grid{animation:none!important;}}
+
 :root{--navy:#375A78;--navy-dark:#1E3A52;--navy-deep:#0D2236;--teal:#0292B7;--teal-bright:#07B8E0;--teal-light:#E3F5FB;--teal-mid:#A8DCF0;--purple:#9443A0;--purple-light:#F4E8F6;--purple-mid:#C98DD1;--white:#FFFFFF;--off-white:#F6F9FC;--border:#DDE5EE;--text-dark:#0A1E30;--text-body:#3C5268;--text-muted:#7A90A5;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -224,9 +233,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   <div class="page-hero-inner">
     <div class="soon-badge">Rolling Out Q2 2026</div>
     <div class="page-pill">VMS &amp; MSP Intelligence</div>
-    <h1>Know which accounts are <em>locked</em> before you pitch.</h1>
+    <div class="reveal"><h1>Know which accounts are <em>locked</em> before you pitch.</h1></div>
     <p class="page-hero-sub">Staffing firms lose weeks warming up prospects — then discover the account is VMS-controlled and closed to new vendors. myScout flags supplier-gated accounts on every company profile, so your team spends time only on the prospects you can actually win.</p>
-    <div class="hero-ctas">
+    <div class="hero-ctas reveal reveal-d2">
       <a href="https://app.myscout.ai" class="btn-teal" target="_blank" rel="noopener">Start Free &rarr;</a>
       <a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" class="btn-purple" target="_blank" rel="noopener">Book Demo &rarr;</a>
     </div>
@@ -237,11 +246,11 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">The Problem</div>
       <h2 class="sh">The hidden trap draining <em>your pipeline.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>Every staffing firm has lived this:</p>
       <p>You identify a target. Research the decision-maker. Warm them up for three weeks. They take the meeting. They're interested. They loop you into procurement. And that's when you find out the account is locked behind an MSP. New vendors can't bid. Existing contracts aren't up for renewal for 18 months. Three weeks of work — <strong>evaporated.</strong></p>
       <p><strong>It's the most common dead-end in staffing sales, and most prospecting tools don't even flag it.</strong></p>
@@ -251,11 +260,11 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section alt">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">Why Generic Tools Miss This</div>
       <h2 class="sh">Traditional sales intelligence <em>doesn't know what an MSP is.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>Generic prospecting platforms are built for SaaS sales, where contract cycles don't care about supplier gatekeeping. In staffing, supplier access is a multi-billion-dollar control layer that's invisible to tools built for everyone.</p>
       <p>That's why staffing firms keep wasting pipeline on locked accounts. The tool doesn't know what it doesn't know.</p>
     </div>
@@ -264,20 +273,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">How myScout Solves It</div>
       <h2 class="sh">VMS/MSP exposure on <em>every company profile.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>When a company is gated by a VMS or managed by an MSP, you see it in myScout before you invest a minute of outreach — flagged directly on the company profile alongside hiring signals, decision-makers, DISC profiles, and warm intros.</p>
     </div>
     <ul class="feat-list">
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Flagged at the company level</strong> — visible before you open outreach</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Integrated with your complete staffing intel view</strong> — no separate research required</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Built by staffing professionals</strong> who know what VMS/MSP gating actually means for your pipeline</div></li>
+      <li class="reveal reveal-d1"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Flagged at the company level</strong> — visible before you open outreach</div></li>
+      <li class="reveal reveal-d2"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Integrated with your complete staffing intel view</strong> — no separate research required</div></li>
+      <li class="reveal reveal-d3"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Built by staffing professionals</strong> who know what VMS/MSP gating actually means for your pipeline</div></li>
     </ul>
     <div class="mock-wrap">
-      <div class="mock-profile">
+      <div class="mock-profile reveal-scale">
         <div class="mock-hdr">
           <div class="mock-logo">A</div>
           <div>
@@ -314,20 +323,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section alt">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">What Changes For Your Team</div>
       <h2 class="sh">Three things your sales team <em>starts doing differently.</em></h2>
     </div>
     <div class="what-changes">
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d1">
         <h3>Prioritize differently</h3>
         <p>Skip accounts where new vendors can't bid. Focus outreach on the ones where you have a real shot.</p>
       </div>
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d2">
         <h3>Time renewals</h3>
         <p>For accounts worth cracking, know they're gated so you can plan a longer play — approaching at contract renewal instead of wasting cold outreach today.</p>
       </div>
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d3">
         <h3>Protect team confidence</h3>
         <p>Nothing kills a rep's morale like three weeks of work locked out from the start. Stop running your team at walls.</p>
       </div>
@@ -379,5 +388,28 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){io.observe(el);});
+  // DISC bar animation
+  var bars=document.querySelectorAll('.disc-bar-fill[data-width]');
+  if(bars.length){
+    var bio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        e.target.style.width=e.target.dataset.width;
+        bio.unobserve(e.target);
+      });
+    },{threshold:.3});
+    bars.forEach(function(b){var w=b.style.width;b.dataset.width=w;b.style.width='0%';b.style.transition='width 1.4s cubic-bezier(.25,.46,.45,.94)';bio.observe(b);});
+  }
+})();
+</script>
+
 </body>
 </html>

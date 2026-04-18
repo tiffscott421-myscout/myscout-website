@@ -51,6 +51,15 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=854934814211526&ev=PageView&noscript=1" alt=""/></noscript>
 
 <style>
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}.reveal-d2{transition-delay:.16s;}.reveal-d3{transition-delay:.24s;}.reveal-d4{transition-delay:.32s;}.reveal-d5{transition-delay:.4s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}.ph-orb1,.ph-orb2,.page-hero-grid{animation:none!important;}}
+
 :root{--navy:#375A78;--navy-dark:#1E3A52;--navy-deep:#0D2236;--teal:#0292B7;--teal-bright:#07B8E0;--teal-light:#E3F5FB;--teal-mid:#A8DCF0;--purple:#9443A0;--purple-light:#F4E8F6;--purple-mid:#C98DD1;--white:#FFFFFF;--off-white:#F6F9FC;--border:#DDE5EE;--text-dark:#0A1E30;--text-body:#3C5268;--text-muted:#7A90A5;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -224,9 +233,9 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   <div class="ph-orb ph-orb1"></div><div class="ph-orb ph-orb2"></div>
   <div class="page-hero-inner">
     <div class="page-pill">DISC Behavioral Profiling</div>
-    <h1>Know how every decision-maker wants to be sold to — <em>before</em> you pick up the phone.</h1>
+    <div class="reveal"><h1>Know how every decision-maker wants to be sold to — <em>before</em> you pick up the phone.</h1></div>
     <p class="page-hero-sub">Every contact in myScout comes with a verified DISC behavioral profile. Your reps stop sending the same pitch to every prospect and start matching their communication style to each buyer's — the way your best rep already does instinctively.</p>
-    <div class="hero-ctas">
+    <div class="hero-ctas reveal reveal-d2">
       <a href="https://app.myscout.ai" class="btn-teal" target="_blank" rel="noopener">Start Free &rarr;</a>
       <a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" class="btn-purple" target="_blank" rel="noopener">Book Demo &rarr;</a>
     </div>
@@ -237,11 +246,11 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">The Problem</div>
       <h2 class="sh">Your best rep does this instinctively. <em>The rest are guessing.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>The top staffing salespeople adapt their pitch, pace, and tone to every prospect. A high-D CFO wants bullet points and ROI. A high-S HR leader wants trust and time. A high-I director wants energy and story. A high-C procurement lead wants evidence and process.</p>
       <p><strong>Most reps send the same email to all four.</strong> That's why generic outreach falls flat — and why one rep on your team is closing deals the others can't.</p>
     </div>
@@ -250,11 +259,11 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section alt">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">Why Generic Tools Fall Short</div>
       <h2 class="sh">Most sales tools treat DISC as <em>an afterthought.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>Traditional sales intelligence platforms don't profile the buyer. They give you an email address and wish you luck. Some offer DISC as a paid add-on, a separate seat, or a clunky browser plugin. Staffing salespeople don't have time for that.</p>
     </div>
   </div>
@@ -262,22 +271,22 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">How myScout Does It</div>
       <h2 class="sh">DISC baked into every contact. <em>Not bolted on.</em></h2>
     </div>
-    <div class="prose">
+    <div class="prose reveal">
       <p>When you reveal a contact in myScout, you don't just get their email and phone. You get a full behavioral profile — DISC breakdown, communication quick reference, recommended selling approach, and what actually motivates them — tied to that specific contact and refreshed on every sync.</p>
     </div>
     <ul class="feat-list">
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Full DISC breakdown</strong> — D, I, S, C percentages for every contact</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Communication quick reference</strong> — Pace, Tone, Focus, Avoid</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Recommended selling approach</strong> tailored to their DISC type</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Motivation triggers</strong> — what actually drives them</div></li>
-      <li><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Pre-call prep in seconds</strong> — not a separate research workflow</div></li>
+      <li class="reveal reveal-d1"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Full DISC breakdown</strong> — D, I, S, C percentages for every contact</div></li>
+      <li class="reveal reveal-d2"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Communication quick reference</strong> — Pace, Tone, Focus, Avoid</div></li>
+      <li class="reveal reveal-d3"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Recommended selling approach</strong> tailored to their DISC type</div></li>
+      <li class="reveal reveal-d4"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Motivation triggers</strong> — what actually drives them</div></li>
+      <li class="reveal reveal-d5"><span class="feat-check">&#10003;</span><div class="feat-text"><strong>Pre-call prep in seconds</strong> — not a separate research workflow</div></li>
     </ul>
     <div class="disc-wrap">
-      <div class="disc-card">
+      <div class="disc-card reveal-scale">
         <div class="disc-hdr">
           <div class="disc-avatar">MR</div>
           <div>
@@ -293,10 +302,10 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
           </div>
         </div>
         <div class="disc-bars">
-          <div class="disc-bar-row"><span class="disc-bar-letter d">D</span><div class="disc-bar-track"><div class="disc-bar-fill d" style="width:82%;"></div></div><span class="disc-bar-pct">82%</span></div>
-          <div class="disc-bar-row"><span class="disc-bar-letter i">I</span><div class="disc-bar-track"><div class="disc-bar-fill i" style="width:26%;"></div></div><span class="disc-bar-pct">26%</span></div>
-          <div class="disc-bar-row"><span class="disc-bar-letter s">S</span><div class="disc-bar-track"><div class="disc-bar-fill s" style="width:20%;"></div></div><span class="disc-bar-pct">20%</span></div>
-          <div class="disc-bar-row"><span class="disc-bar-letter c">C</span><div class="disc-bar-track"><div class="disc-bar-fill c" style="width:60%;"></div></div><span class="disc-bar-pct">60%</span></div>
+          <div class="disc-bar-row"><span class="disc-bar-letter d">D</span><div class="disc-bar-track"><div class="disc-bar-fill d" data-width="82%"></div></div><span class="disc-bar-pct">82%</span></div>
+          <div class="disc-bar-row"><span class="disc-bar-letter i">I</span><div class="disc-bar-track"><div class="disc-bar-fill i" data-width="26%"></div></div><span class="disc-bar-pct">26%</span></div>
+          <div class="disc-bar-row"><span class="disc-bar-letter s">S</span><div class="disc-bar-track"><div class="disc-bar-fill s" data-width="20%"></div></div><span class="disc-bar-pct">20%</span></div>
+          <div class="disc-bar-row"><span class="disc-bar-letter c">C</span><div class="disc-bar-track"><div class="disc-bar-fill c" data-width="60%"></div></div><span class="disc-bar-pct">60%</span></div>
         </div>
         <div class="disc-quick-label">Communication Quick Reference</div>
         <div class="disc-quick-grid">
@@ -313,20 +322,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 
 <section class="section alt">
   <div class="wrap">
-    <div class="section-hdr">
+    <div class="section-hdr reveal">
       <div class="stag">What Changes For Your Team</div>
       <h2 class="sh">Three things your sales team <em>starts doing differently.</em></h2>
     </div>
     <div class="what-changes">
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d1">
         <h3>Tailored first touches</h3>
         <p>Your first email to a high-D reads "15 placements, 23% faster fills, ROI in 60 days." To a high-S: "Happy to walk you through a no-pressure conversation about your team's capacity." Same product. Different language. Higher reply rates.</p>
       </div>
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d2">
         <h3>Better first calls</h3>
         <p>Before you dial, you know to slow down, speed up, give space, or push hard. No more blown first impressions because your rep matched a high-D's energy when they needed high-S warmth.</p>
       </div>
-      <div class="wc-card">
+      <div class="wc-card reveal reveal-d3">
         <h3>Faster ramp for new reps</h3>
         <p>Junior salespeople get an instant coach. DISC guidance tells them what to say, what to avoid, and what the buyer cares about — from day one.</p>
       </div>
@@ -378,5 +387,28 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){io.observe(el);});
+  // DISC bar animation
+  var bars=document.querySelectorAll('.disc-bar-fill[data-width]');
+  if(bars.length){
+    var bio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        e.target.style.width=e.target.dataset.width;
+        bio.unobserve(e.target);
+      });
+    },{threshold:.3});
+    bars.forEach(function(b){var w=b.style.width;b.dataset.width=w;b.style.width='0%';b.style.transition='width 1.4s cubic-bezier(.25,.46,.45,.94)';bio.observe(b);});
+  }
+})();
+</script>
+
 </body>
 </html>
