@@ -153,6 +153,27 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
   gtag('js', new Date());
   gtag('config', 'G-Z6D4ST6YYL');
 </script>
+<!-- Vercel Web Analytics -->
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- Vercel Speed Insights (Core Web Vitals) -->
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<!-- GA4 conversion events: Book Demo + Try Free button clicks -->
+<script>
+(function(){
+  if(typeof gtag !== 'function') return;
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if(!a || !a.href) return;
+    var href = a.href;
+    if(href.indexOf('zohobookings.com') !== -1){
+      gtag('event', 'book_demo_click', {event_category:'cta', event_label:'Book Demo', link_url: href, page_location: location.pathname});
+    } else if(href.indexOf('app.myscout.ai') !== -1){
+      gtag('event', 'try_free_click', {event_category:'cta', event_label:'Try Free', link_url: href, page_location: location.pathname});
+    }
+  }, true);
+})();
+</script>
+
 <!-- Meta (Facebook) Pixel -->
 <script>
 !function(f,b,e,v,n,t,s)
