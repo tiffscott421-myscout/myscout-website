@@ -209,6 +209,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .cf-honeypot{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;}
 @media(max-width:640px){.cf-row{grid-template-columns:1fr;}}
 
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}
+.reveal-d2{transition-delay:.16s;}
+.reveal-d3{transition-delay:.24s;}
+.reveal-d4{transition-delay:.32s;}
+.reveal-d5{transition-delay:.4s;}
+.reveal-d6{transition-delay:.48s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}}
+
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -264,21 +278,21 @@ fbq('track', 'PageView');
   <div class="ph-orb ph-orb1"></div><div class="ph-orb ph-orb2"></div>
   <div class="page-hero-inner f1">
     <div class="page-pill">Get in Touch</div>
-    <h1>Let's talk about<br><em>your pipeline.</em></h1>
-    <p class="page-hero-sub">Book a 30-minute call, shoot us an email, or just start free and see for yourself. No pressure, no pitch — just a real conversation.</p>
+    <h1 class="reveal">Let's talk about<br><em>your pipeline.</em></h1>
+    <p class="reveal page-hero-sub">Book a 30-minute call, shoot us an email, or just start free and see for yourself. No pressure, no pitch — just a real conversation.</p>
   </div>
 </section>
 <div class="marquee"><div class="mtrack"><span class="mi">No Sales Pitch</span><span class="mi">30-Minute Call</span><span class="mi">Real Conversation</span><span class="mi">Book Today</span><span class="mi">Start Free — No Card</span><span class="mi">GameOn@myScoutLeads.com</span><span class="mi">484.995.4800</span><span class="mi">No Sales Pitch</span><span class="mi">30-Minute Call</span><span class="mi">Real Conversation</span><span class="mi">Book Today</span><span class="mi">Start Free — No Card</span><span class="mi">GameOn@myScoutLeads.com</span><span class="mi">484.995.4800</span></div></div>
 <section class="contact-main">
   <div class="wrap">
     <div class="stag">Contact</div>
-    <h2 class="sh">We're easy to reach.<br><em>Pick your lane.</em></h2>
+    <h2 class="reveal sh">We're easy to reach.<br><em>Pick your lane.</em></h2>
     <div class="contact-grid">
-      <div class="booking-card">
+      <div class="reveal-scale reveal-d1 booking-card">
         <div class="bc-orb"></div>
         <div class="bc-tag">Recommended</div>
         <div class="bc-title">Book a 30-minute<br><em>call with Tiffany.</em></div>
-        <p class="bc-desc">This isn't a sales call. It's a real conversation about your pipeline, what you've tried, and whether myScout is actually the right fit. If it's not, she'll tell you.</p>
+        <p class="reveal bc-desc">This isn't a sales call. It's a real conversation about your pipeline, what you've tried, and whether myScout is actually the right fit. If it's not, she'll tell you.</p>
         <ul class="bc-list">
           <li>30 minutes, no agenda, no deck</li>
           <li>Tiffany walks you through the platform live</li>
@@ -287,10 +301,10 @@ fbq('track', 'PageView');
         </ul>
         <a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" class="btn-white" style="width:100%;justify-content:center;display:flex;" target="_blank" rel="noopener">Book a Call Now →</a>
         <a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" target="_blank" rel="noopener" class="btn-demo" style="width:100%;justify-content:center;display:flex;background:var(--purple);color:var(--white);padding:14px 20px;border-radius:7px;font-weight:800;font-size:.88rem;text-decoration:none;margin-top:10px;transition:all .2s;">Or Book a Demo →</a>
-        <p class="bc-note">Scheduling powered by Zoho Bookings. Pick a time that works for you.</p>
+        <p class="reveal bc-note">Scheduling powered by Zoho Bookings. Pick a time that works for you.</p>
       </div>
       <div class="contact-info">
-        <div class="ci-hdr"><div class="stag">Or reach out directly</div><p class="bt">Prefer email or phone? We're real people. You'll hear back fast.</p></div>
+        <div class="ci-hdr"><div class="stag">Or reach out directly</div><p class="reveal bt">Prefer email or phone? We're real people. You'll hear back fast.</p></div>
         <div class="ci-row"><div class="ci-icon">📧</div><div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></div><div class="ci-sub">We respond within 1 business day</div></div></div>
         <div class="ci-row"><div class="ci-icon">📞</div><div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:4849954800">484.995.4800</a></div><div class="ci-sub">Mon–Fri · 9am–5pm ET</div></div></div>
         <div class="ci-row"><div class="ci-icon p">⚡</div><div><div class="ci-label">Try it first</div><div class="ci-value"><a href="https://app.myscout.ai" target="_blank" rel="noopener">app.myscout.ai</a></div><div class="ci-sub">Start free — 50 credits, no card required</div></div></div>
@@ -314,8 +328,8 @@ fbq('track', 'PageView');
   <div class="wrap">
     <div class="cf-intro">
       <div class="stag center">Message Us</div>
-      <h2 class="sh" style="margin-bottom:12px;">Prefer to write it out?<br><em>Send us a note.</em></h2>
-      <p class="bt">Tell us about your pipeline, your team, or whatever's on your mind. Real people read these. You'll hear back within 1 business day.</p>
+      <h2 class="reveal sh" style="margin-bottom:12px;">Prefer to write it out?<br><em>Send us a note.</em></h2>
+      <p class="reveal bt">Tell us about your pipeline, your team, or whatever's on your mind. Real people read these. You'll hear back within 1 business day.</p>
     </div>
     <form id="contactForm" action="https://usebasin.com/f/4f92f6e7f905" method="POST" class="cf-form" novalidate>
       <input type="text" name="_gotcha" class="cf-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -357,16 +371,16 @@ fbq('track', 'PageView');
 <section style="padding:100px 0;background:var(--off-white);border-top:1px solid var(--border);">
   <div class="wrap">
     <div class="stag">FAQ</div>
-    <h2 class="sh">Common questions<br><em>answered.</em></h2>
+    <h2 class="reveal sh">Common questions<br><em>answered.</em></h2>
     <div class="faq-grid">
-      <div class="faq-item reveal"><h3 class="faq-q"><span>Is myScout really free to start?</span></h3><p class="faq-a">You get 50 free credits on signup — no credit card, no auto-charge. Use them to reveal emails, pull DISC profiles, detect warm intros, and see exactly what we deliver. When they run out, you upgrade or walk. We don't trick you into staying.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>How is myScout different from ZoomInfo, Apollo, or AgencyLeads?</span></h3><p class="faq-a">We're not lead gen. Those tools sell SaaS-style contact scraping — 50 million random companies, cold. myScout is built only for staffing: every field, every score, every signal exists because a staffing salesperson asked for it. Staffing-specific likelihood scoring, local-first contact matching, DISC profiles baked in, and every data point tagged with its source and confidence level. They're tools for everyone. We're a weapon for staffing.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>What happens to unused credits?</span></h3><p class="faq-a">They roll over forever. You paid for them, you keep them. Expiring credits on paying customers is a rip-off, and we're not doing it.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>Who is myScout built for?</span></h3><p class="faq-a">Anyone hunting job orders — staffing sales reps, perm recruiters, agency owners, TA partners, fractional recruiters, and firm owners. Whether you place temp, perm, or both, if your job is to find companies with hiring needs and convince them to work with you, myScout is your weapon.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>What is Human Scout verification?</span></h3><p class="faq-a">Our Human Scouts — real people on our research team — make thousands of verification calls a week to confirm contacts, employment, and hiring activity that automated systems miss. AI gets you 80% of the way; humans close the last 20% where it matters. That's why our emails land, our numbers ring the right person, and you're not burning credits on stale data. You won't find this in ZoomInfo or Apollo.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>How does myScout score a company's likelihood to use staffing?</span></h3><p class="faq-a">Behind every staffing likelihood score is a cross-reference of dozens of signals — hiring patterns, vendor management activity, procurement records, growth trajectory, contractor exposure, and more — scored for strength and recency. AI handles the breadth. Human Scouts verify what matters. Nothing like this exists. Go look.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>What is a Scout Request?</span></h3><p class="faq-a">An on-demand deep research service. Submit a target company and our Human Scout team delivers a full intel package — decision-maker contacts, DISC profile, company background, and sales strategy — in 24 hours or 4 hours. Full credit refund if we miss the window.</p></div>
-      <div class="faq-item reveal"><h3 class="faq-q"><span>Do you offer enterprise pricing?</span></h3><p class="faq-a">Yes. For firms with 20+ seats, we build a custom package with custom credits, dedicated support, and volume discounts. Book a call and we'll put together something that fits your team.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>Is myScout really free to start?</span></h3><p class="reveal faq-a">You get 50 free credits on signup — no credit card, no auto-charge. Use them to reveal emails, pull DISC profiles, detect warm intros, and see exactly what we deliver. When they run out, you upgrade or walk. We don't trick you into staying.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>How is myScout different from ZoomInfo, Apollo, or AgencyLeads?</span></h3><p class="reveal faq-a">We're not lead gen. Those tools sell SaaS-style contact scraping — 50 million random companies, cold. myScout is built only for staffing: every field, every score, every signal exists because a staffing salesperson asked for it. Staffing-specific likelihood scoring, local-first contact matching, DISC profiles baked in, and every data point tagged with its source and confidence level. They're tools for everyone. We're a weapon for staffing.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>What happens to unused credits?</span></h3><p class="reveal faq-a">They roll over forever. You paid for them, you keep them. Expiring credits on paying customers is a rip-off, and we're not doing it.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>Who is myScout built for?</span></h3><p class="reveal faq-a">Anyone hunting job orders — staffing sales reps, perm recruiters, agency owners, TA partners, fractional recruiters, and firm owners. Whether you place temp, perm, or both, if your job is to find companies with hiring needs and convince them to work with you, myScout is your weapon.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>What is Human Scout verification?</span></h3><p class="reveal faq-a">Our Human Scouts — real people on our research team — make thousands of verification calls a week to confirm contacts, employment, and hiring activity that automated systems miss. AI gets you 80% of the way; humans close the last 20% where it matters. That's why our emails land, our numbers ring the right person, and you're not burning credits on stale data. You won't find this in ZoomInfo or Apollo.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>How does myScout score a company's likelihood to use staffing?</span></h3><p class="reveal faq-a">Behind every staffing likelihood score is a cross-reference of dozens of signals — hiring patterns, vendor management activity, procurement records, growth trajectory, contractor exposure, and more — scored for strength and recency. AI handles the breadth. Human Scouts verify what matters. Nothing like this exists. Go look.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>What is a Scout Request?</span></h3><p class="reveal faq-a">An on-demand deep research service. Submit a target company and our Human Scout team delivers a full intel package — decision-maker contacts, DISC profile, company background, and sales strategy — in 24 hours or 4 hours. Full credit refund if we miss the window.</p></div>
+      <div class="faq-item reveal"><h3 class="reveal faq-q"><span>Do you offer enterprise pricing?</span></h3><p class="reveal faq-a">Yes. For firms with 20+ seats, we build a custom package with custom credits, dedicated support, and volume discounts. Book a call and we'll put together something that fits your team.</p></div>
     </div>
     </div>
   </div>
@@ -379,7 +393,7 @@ fbq('track', 'PageView');
       <div>
         <div class="pod-tag">Podcast</div>
         <div class="pod-title">Out of Line with Tiffany Scott</div>
-        <p class="pod-desc">Real conversations with staffing industry leaders and people who do things differently. No corporate speak. No scripted answers.</p>
+        <p class="reveal pod-desc">Real conversations with staffing industry leaders and people who do things differently. No corporate speak. No scripted answers.</p>
         <div class="pod-links">
           <a href="https://www.youtube.com/@OutOfLinePod" class="pod-link" target="_blank" rel="noopener">▶ YouTube</a>
           <a href="https://podcasts.apple.com/us/podcast/out-of-line-with-tiffany-scott/id1882144516" class="pod-link" target="_blank" rel="noopener">🎧 Apple Podcasts</a>
@@ -396,22 +410,22 @@ fbq('track', 'PageView');
   <div class="cta-orb"></div>
   <div class="cta-in">
     <div class="stag center teal">Ready?</div>
-    <h2>Stop chasing.<br>Start <em>closing.</em></h2>
-    <p>Start free today or book a call. Either way, you're one step closer to a pipeline that actually works.</p>
+    <h2 class="reveal">Stop chasing.<br>Start <em>closing.</em></h2>
+    <p class="reveal">Start free today or book a call. Either way, you're one step closer to a pipeline that actually works.</p>
     <div class="cta-btns"><a href="https://app.myscout.ai" class="btn-teal" target="_blank" rel="noopener">Start Free Today →</a><a href="https://myscoutleads.zohobookings.com/#/myscoutleads" class="btn-ghost" target="_blank" rel="noopener">Book a Call</a></div>
   </div>
 </section>
 
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
+    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="reveal ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
     <div class="ft-cols">
-      <div class="ft-col"><h3>Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
-      <div class="ft-col"><h3>Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
-      <div class="ft-col"><h3>Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
     </div>
   </div>
-  <div class="ft-bot"><p>© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div>
+  <div class="ft-bot"><p class="reveal">© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div>
 </footer>
 
 <!-- Chat Widget -->
@@ -433,7 +447,7 @@ fbq('track', 'PageView');
 .chat-opt-icon{font-size:1.1rem;width:24px;text-align:center;}
 </style>
 <div class="chat-panel" id="chatPanel">
-  <div class="chat-panel-hdr"><h4>Let's talk</h4><p>Choose how you'd like to connect</p></div>
+  <div class="chat-panel-hdr"><h4>Let's talk</h4><p class="reveal">Choose how you'd like to connect</p></div>
   <div class="chat-panel-body">
     <a href="https://myscoutleads.zohobookings.com/#/myscoutleads" class="chat-opt" target="_blank"><span class="chat-opt-icon">📅</span>Book a Call</a>
     <a href="mailto:GameOn@myScoutLeads.com" class="chat-opt"><span class="chat-opt-icon">✉️</span>Email Us</a>
@@ -503,6 +517,36 @@ fbq('track', 'PageView');
       btn.disabled = false;
     }
   });
+})();
+</script>
+
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){io.observe(el);});
+  /* Stat number counters */
+  var counters=document.querySelectorAll('[data-count]');
+  if(counters.length){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target; var target=parseFloat(el.dataset.count);
+        var prefix=el.dataset.prefix||''; var suffix=el.dataset.suffix||'';
+        var duration=1400; var start=performance.now();
+        (function tick(now){
+          var p=Math.min((now-start)/duration,1); var eased=1-Math.pow(1-p,3);
+          el.textContent=prefix+Math.round(target*eased)+suffix;
+          if(p<1)requestAnimationFrame(tick);
+        })(start);
+        cio.unobserve(el);
+      });
+    },{threshold:.3});
+    counters.forEach(function(c){c.textContent='0'; cio.observe(c);});
+  }
 })();
 </script>
 

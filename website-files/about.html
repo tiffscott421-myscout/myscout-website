@@ -195,6 +195,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .nav-logo { padding: 0; display: flex; align-items: center; }
 .nav-logo-img { height: 84px; width: auto; display: block; }
 .footer-logo-img { height: 100px; width: auto; display: block; opacity: 0.95; margin-bottom: 4px; }
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}
+.reveal-d2{transition-delay:.16s;}
+.reveal-d3{transition-delay:.24s;}
+.reveal-d4{transition-delay:.32s;}
+.reveal-d5{transition-delay:.4s;}
+.reveal-d6{transition-delay:.48s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}}
+
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -250,30 +264,30 @@ fbq('track', 'PageView');
   <div class="ph-orb ph-orb1"></div><div class="ph-orb ph-orb2"></div>
   <div class="page-hero-inner f1">
     <div class="page-pill">About myScout</div>
-    <h1>Built by a staffing pro.<br><em>For staffing pros.</em></h1>
-    <p class="page-hero-sub">We got tired of watching great staffing firms lose deals to bad data. So we built the tool we always wished existed.</p>
+    <h1 class="reveal">Built by a staffing pro.<br><em>For staffing pros.</em></h1>
+    <p class="reveal page-hero-sub">We got tired of watching great staffing firms lose deals to bad data. So we built the tool we always wished existed.</p>
   </div>
 </section>
 <div class="marquee"><div class="mtrack"><span class="mi">20+ Years Staffing Experience</span><span class="mi">Built from the Inside Out</span><span class="mi">No Generic Tools</span><span class="mi">One Platform. One Focus.</span><span class="mi">We Hunt. You Kill.</span><span class="mi">Philly Roots. National Vision.</span><span class="mi">20+ Years Staffing Experience</span><span class="mi">Built from the Inside Out</span><span class="mi">No Generic Tools</span><span class="mi">One Platform. One Focus.</span><span class="mi">We Hunt. You Kill.</span><span class="mi">Philly Roots. National Vision.</span></div></div>
 <section class="about-mission">
   <div class="wrap">
     <div class="stag">Our Mission</div>
-    <h2 class="sh">No one does what we do.<br><em>No one.</em></h2>
+    <h2 class="reveal sh">No one does what we do.<br><em>No one.</em></h2>
     <div class="mission-grid">
       <div>
-        <p class="bt" style="margin-bottom:16px;">There is no sales prospecting tool built exclusively for staffing. Not one. Every platform out there — ZoomInfo, Apollo, Seamless — was built for everyone. Which means it was built for no one in particular, and it shows every time a staffing firm tries to use it.</p>
-        <p class="bt" style="margin-bottom:16px;"><strong style="color:var(--navy-deep);">myScout changes that.</strong> We built a platform from the ground up around the specific way staffing sales works — the buying signals that matter, the decision-makers that count, and the intel your team actually needs to walk into a conversation ready to win.</p>
+        <p class="reveal bt" style="margin-bottom:16px;">There is no sales prospecting tool built exclusively for staffing. Not one. Every platform out there — ZoomInfo, Apollo, Seamless — was built for everyone. Which means it was built for no one in particular, and it shows every time a staffing firm tries to use it.</p>
+        <p class="reveal bt" style="margin-bottom:16px;"><strong style="color:var(--navy-deep);">myScout changes that.</strong> We built a platform from the ground up around the specific way staffing sales works — the buying signals that matter, the decision-makers that count, and the intel your team actually needs to walk into a conversation ready to win.</p>
         <div class="bold-line">"Prospects for Staffing. Nothing else."</div>
-        <p class="bt" style="margin-bottom:24px;">We're not trying to be all things to all industries. We're trying to be the only thing that matters to one: staffing. That focus is the whole point.</p>
+        <p class="reveal bt" style="margin-bottom:24px;">We're not trying to be all things to all industries. We're trying to be the only thing that matters to one: staffing. That focus is the whole point.</p>
         <a href="what-we-do" class="btn-teal">See What We Do →</a>
       </div>
       <div class="mission-vis">
         <div style="margin-bottom:20px;border-radius:12px;overflow:hidden;background:#0B1F33;box-shadow:0 12px 32px rgba(13,34,54,.15);"><img src="images/product-mockup.jpg" alt="myScout product: Meridian Enterprises company profile with staffing likelihood, contacts, and signals" style="width:100%;height:auto;display:block;"></div>
-        <div class="mstat-grid">
-          <div class="mstat"><div class="mstat-num">20<span style="color:var(--teal-bright)">+</span></div><div class="mstat-label">Years in staffing industry</div></div>
-          <div class="mstat"><div class="mstat-num"><em>Only</em></div><div class="mstat-label">Platform built exclusively for staffing sales</div></div>
-          <div class="mstat"><div class="mstat-num">40<span style="color:var(--teal-bright)">+</span></div><div class="mstat-label">Data points per prospect<br><span style="font-size:.65rem;color:var(--text-muted);">(company, contact, signals)</span></div></div>
-          <div class="mstat"><div class="mstat-num">31</div><div class="mstat-label">Sources powering every intent signal</div></div>
+        <div class="reveal-scale reveal-d1 mstat-grid">
+          <div class="reveal-scale reveal-d2 mstat"><div class="reveal-scale reveal-d3 mstat-num">20<span style="color:var(--teal-bright)">+</span></div><div class="reveal-scale reveal-d4 mstat-label">Years in staffing industry</div></div>
+          <div class="reveal-scale reveal-d5 mstat"><div class="reveal-scale reveal-d6 mstat-num"><em>Only</em></div><div class="reveal-scale reveal-d1 mstat-label">Platform built exclusively for staffing sales</div></div>
+          <div class="reveal-scale reveal-d2 mstat"><div class="reveal-scale reveal-d3 mstat-num">40<span style="color:var(--teal-bright)">+</span></div><div class="reveal-scale reveal-d4 mstat-label">Data points per prospect<br><span style="font-size:.65rem;color:var(--text-muted);">(company, contact, signals)</span></div></div>
+          <div class="reveal-scale reveal-d5 mstat"><div class="reveal-scale reveal-d6 mstat-num">31</div><div class="reveal-scale reveal-d1 mstat-label">Sources powering every intent signal</div></div>
         </div>
       </div>
     </div>
@@ -282,7 +296,7 @@ fbq('track', 'PageView');
 <section class="founder-section">
   <div class="wrap">
     <div class="stag">The Founder</div>
-    <h2 class="sh">The person behind<br><em>the platform.</em></h2>
+    <h2 class="reveal sh">The person behind<br><em>the platform.</em></h2>
     <div class="founder-grid">
       <div style="position:relative;">
         <img src="images/tiffany-headshot.jpg" alt="Tiffany Scott - Founder and CEO of myScout" class="founder-photo" style="object-fit:cover;width:100%;">
@@ -292,9 +306,9 @@ fbq('track', 'PageView');
         <div class="founder-name">Tiffany Scott</div>
         <div class="founder-title">Founder &amp; CEO · myScout®</div>
         <div class="founder-bio">
-          <p>Tiffany Scott spent nearly two decades in the staffing industry — <strong>rising from recruiter all the way to COO</strong> at PeopleShare, one of the country's fastest-growing staffing firms. She's been in the trenches, built sales teams, and watched firsthand what separates the firms that grow from the ones that grind.</p>
-          <p>The answer almost always came down to the same thing: <strong>bad data and wasted time.</strong> Salespeople spending hours researching prospects that had no intent to buy. Outdated contact lists. Generic tools that didn't understand what a staffing firm actually needed to know before making a call.</p>
-          <p>myScout was built to solve exactly that. Not a pivot. Not a side project. A direct response to a problem Tiffany lived for 20 years — and a tool she built because no one else was building it right.</p>
+          <p class="reveal">Tiffany Scott spent nearly two decades in the staffing industry — <strong>rising from recruiter all the way to COO</strong> at PeopleShare, one of the country's fastest-growing staffing firms. She's been in the trenches, built sales teams, and watched firsthand what separates the firms that grow from the ones that grind.</p>
+          <p class="reveal">The answer almost always came down to the same thing: <strong>bad data and wasted time.</strong> Salespeople spending hours researching prospects that had no intent to buy. Outdated contact lists. Generic tools that didn't understand what a staffing firm actually needed to know before making a call.</p>
+          <p class="reveal">myScout was built to solve exactly that. Not a pivot. Not a side project. A direct response to a problem Tiffany lived for 20 years — and a tool she built because no one else was building it right.</p>
         </div>
         <div class="cred-pills">
           <span class="cred-pill"><span class="dot"></span>20+ Years Staffing</span>
@@ -310,23 +324,23 @@ fbq('track', 'PageView');
 <section class="trust-strip reveal">
   <div class="wrap">
     <div class="ts-grid">
-      <div class="ts-item">
+      <div class="reveal-scale reveal-d1 ts-item">
         <div class="ts-num">20<span style="color:var(--teal-bright)">+</span></div>
         <div class="ts-label">Years in Staffing</div>
       </div>
-      <div class="ts-item">
+      <div class="reveal-scale reveal-d2 ts-item">
         <div class="ts-num text">Former COO</div>
         <div class="ts-label">PeopleShare</div>
       </div>
-      <div class="ts-item">
+      <div class="reveal-scale reveal-d3 ts-item">
         <div class="ts-num">31</div>
         <div class="ts-label">Data Sources</div>
       </div>
-      <div class="ts-item">
+      <div class="reveal-scale reveal-d4 ts-item">
         <div class="ts-num">40<span style="color:var(--purple)">+</span></div>
         <div class="ts-label">Data Points Per Prospect</div>
       </div>
-      <div class="ts-item">
+      <div class="reveal-scale reveal-d5 ts-item">
         <div class="ts-num">47</div>
         <div class="ts-label">Articles Published</div>
       </div>
@@ -337,11 +351,11 @@ fbq('track', 'PageView');
 <section class="diff-section">
   <div class="wrap">
     <div class="stag teal" style="position:relative;z-index:1;">Why myScout</div>
-    <h2 class="sh w" style="position:relative;z-index:1;">What makes us<br><em>different.</em></h2>
+    <h2 class="reveal sh w" style="position:relative;z-index:1;">What makes us<br><em>different.</em></h2>
     <div class="diff-grid">
-      <div class="dc"><div class="dc-num">01</div><div class="dc-title">Built by someone who sold staffing</div><p class="dc-body">Not a tech startup that decided staffing was a good market. A platform built by someone who spent 20 years in the industry and knows exactly what information matters before you pick up the phone.</p></div>
-      <div class="dc pur"><div class="dc-num">02</div><div class="dc-title">One platform. One focus.</div><p class="dc-body">We don't serve marketing agencies, SaaS companies, or law firms. We serve staffing firms. That focus means every feature, every data point, and every credit cost is designed around how staffing sales actually works.</p></div>
-      <div class="dc"><div class="dc-num">03</div><div class="dc-title">Intel, not just data</div><p class="dc-body">A name and number is not intelligence. myScout gives you behavioral profiles, warm intro paths, mutual connections, staffing usage signals, and a personalized strategy for each prospect. That's the difference between a cold call and a warm conversation.</p></div>
+      <div class="dc"><div class="dc-num">01</div><div class="dc-title">Built by someone who sold staffing</div><p class="reveal dc-body">Not a tech startup that decided staffing was a good market. A platform built by someone who spent 20 years in the industry and knows exactly what information matters before you pick up the phone.</p></div>
+      <div class="dc pur"><div class="dc-num">02</div><div class="dc-title">One platform. One focus.</div><p class="reveal dc-body">We don't serve marketing agencies, SaaS companies, or law firms. We serve staffing firms. That focus means every feature, every data point, and every credit cost is designed around how staffing sales actually works.</p></div>
+      <div class="dc"><div class="dc-num">03</div><div class="dc-title">Intel, not just data</div><p class="reveal dc-body">A name and number is not intelligence. myScout gives you behavioral profiles, warm intro paths, mutual connections, staffing usage signals, and a personalized strategy for each prospect. That's the difference between a cold call and a warm conversation.</p></div>
     </div>
   </div>
 </section>
@@ -349,22 +363,22 @@ fbq('track', 'PageView');
   <div class="cta-orb"></div>
   <div class="cta-in">
     <div class="stag center teal">Get Started</div>
-    <h2>Ready to stop<br><em>guessing?</em></h2>
-    <p>Start free, no credit card required. Or book a call with Tiffany directly and let's talk about what your pipeline needs.</p>
+    <h2 class="reveal">Ready to stop<br><em>guessing?</em></h2>
+    <p class="reveal">Start free, no credit card required. Or book a call with Tiffany directly and let's talk about what your pipeline needs.</p>
     <div class="cta-btns"><a href="https://app.myscout.ai" class="btn-teal" target="_blank" rel="noopener">Start Free →</a><a href="https://tiffany-scott.zohobookings.com/#/4739270000001317028" class="btn-ghost" target="_blank" rel="noopener">Book a Call</a></div>
   </div>
 </section>
 
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
+    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="reveal ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
     <div class="ft-cols">
-      <div class="ft-col"><h3>Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
-      <div class="ft-col"><h3>Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
-      <div class="ft-col"><h3>Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
     </div>
   </div>
-  <div class="ft-bot"><p>© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div></footer>
+  <div class="ft-bot"><p class="reveal">© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div></footer>
 
 <!-- Chat Widget -->
 <style>
@@ -385,7 +399,7 @@ fbq('track', 'PageView');
 .chat-opt-icon{font-size:1.1rem;width:24px;text-align:center;}
 </style>
 <div class="chat-panel" id="chatPanel">
-  <div class="chat-panel-hdr"><h4>Let's talk</h4><p>Choose how you'd like to connect</p></div>
+  <div class="chat-panel-hdr"><h4>Let's talk</h4><p class="reveal">Choose how you'd like to connect</p></div>
   <div class="chat-panel-body">
     <a href="https://myscoutleads.zohobookings.com/#/myscoutleads" class="chat-opt" target="_blank"><span class="chat-opt-icon">📅</span>Book a Call</a>
     <a href="mailto:GameOn@myScoutLeads.com" class="chat-opt"><span class="chat-opt-icon">✉️</span>Email Us</a>
@@ -416,5 +430,35 @@ fbq('track', 'PageView');
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){io.observe(el);});
+  /* Stat number counters */
+  var counters=document.querySelectorAll('[data-count]');
+  if(counters.length){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target; var target=parseFloat(el.dataset.count);
+        var prefix=el.dataset.prefix||''; var suffix=el.dataset.suffix||'';
+        var duration=1400; var start=performance.now();
+        (function tick(now){
+          var p=Math.min((now-start)/duration,1); var eased=1-Math.pow(1-p,3);
+          el.textContent=prefix+Math.round(target*eased)+suffix;
+          if(p<1)requestAnimationFrame(tick);
+        })(start);
+        cio.unobserve(el);
+      });
+    },{threshold:.3});
+    counters.forEach(function(c){c.textContent='0'; cio.observe(c);});
+  }
+})();
+</script>
+
 </body>
 </html>

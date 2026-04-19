@@ -207,6 +207,20 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
 .nav-logo { padding: 0; display: flex; align-items: center; }
 .nav-logo-img { height: 84px; width: auto; display: block; }
 .footer-logo-img { height: 100px; width: auto; display: block; opacity: 0.95; margin-bottom: 4px; }
+
+/* Scroll reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-scale{opacity:0;transform:scale(.96) translateY(12px);transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94);}
+.reveal-scale.visible{opacity:1;transform:scale(1) translateY(0);}
+.reveal-d1{transition-delay:.08s;}
+.reveal-d2{transition-delay:.16s;}
+.reveal-d3{transition-delay:.24s;}
+.reveal-d4{transition-delay:.32s;}
+.reveal-d5{transition-delay:.4s;}
+.reveal-d6{transition-delay:.48s;}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-scale{opacity:1!important;transform:none!important;}}
+
 </style>
 
 <!-- Google Analytics (GA4) -->
@@ -262,40 +276,40 @@ fbq('track', 'PageView');
   <div class="ph-orb ph-orb1"></div><div class="ph-orb ph-orb2"></div>
   <div class="page-hero-inner f1">
     <div class="page-pill">What We Do</div>
-    <h1>The complete<br><em>staffing sales weapon.</em></h1>
-    <p class="page-hero-sub">From identifying the right company to knowing exactly how to open the conversation — myScout gives you everything in one place.</p>
+    <h1 class="reveal">The complete<br><em>staffing sales weapon.</em></h1>
+    <p class="reveal page-hero-sub">From identifying the right company to knowing exactly how to open the conversation — myScout gives you everything in one place.</p>
   </div>
 </section>
 <div class="marquee"><div class="mtrack"><span class="mi">Prospect Intelligence</span><span class="mi">Decision-Maker Contacts</span><span class="mi">DISC Profiles</span><span class="mi">Warm Intro Detection</span><span class="mi">Sales Strategies</span><span class="mi">Scout Requests</span><span class="mi">Chrome Extension</span><span class="mi">CRM Integration</span><span class="mi">Prospect Intelligence</span><span class="mi">Decision-Maker Contacts</span><span class="mi">DISC Profiles</span><span class="mi">Warm Intro Detection</span><span class="mi">Sales Strategies</span><span class="mi">Scout Requests</span><span class="mi">Chrome Extension</span><span class="mi">CRM Integration</span></div></div>
 <section class="wtd-intro">
   <div class="wrap">
     <div class="stag">Seven Layers of Intel</div>
-    <h2 class="sh">Everything you need to sell.<br><em>Nothing you don't.</em></h2>
+    <h2 class="reveal sh">Everything you need to sell.<br><em>Nothing you don't.</em></h2>
 
-    <div class="feat-block">
+    <div class="reveal-scale reveal-d1 feat-block">
       <div>
         <span class="feat-tag">01 · Prospect Intelligence</span>
         <div class="fbt">Companies that actually <em>use staffing.</em></div>
-        <p class="fb">Generic tools give you companies. myScout gives you companies with verified signals that they use — or are actively seeking — staffing services. No more burning credits on a prospect who has never considered outsourcing a hire.</p>
+        <p class="reveal fb">Generic tools give you companies. myScout gives you companies with verified signals that they use — or are actively seeking — staffing services. No more burning credits on a prospect who has never considered outsourcing a hire.</p>
         <ul class="flist"><li>Staffing usage indicator on every company profile</li><li>Industry, headcount, and hiring behavior context</li><li>Filtered to match your service type and market</li><li>Updated intelligence — not stale data from a 3-year-old export</li></ul>
       </div>
       <div class="fvis">
-        <h3 class="vis-label">Company Profiles</h3>
-        <div class="mock-card"><div class="mc-hdr"><div class="mc-av" style="border-radius:8px;font-size:.68rem;font-weight:800;">AC</div><div><div class="mc-name">Acme Manufacturing Co.</div><div class="mc-co">Manufacturing · 210 employees · Philadelphia, PA</div></div></div><div class="mc-pills"><span class="mcp t">🏭 Manufacturing</span><span class="mcp g">✓ Uses Staffing</span><span class="mcp p">High Priority</span></div></div>
-        <div class="mock-card"><div class="mc-hdr"><div class="mc-av" style="border-radius:8px;font-size:.68rem;font-weight:800;background:linear-gradient(135deg,#2A7A6A,var(--navy-dark));">AL</div><div><div class="mc-name">Apex Logistics Group</div><div class="mc-co">Logistics · 85 employees · King of Prussia, PA</div></div></div><div class="mc-pills"><span class="mcp t">🚚 Logistics</span><span class="mcp g">✓ Uses Staffing</span></div></div>
+        <h3 class="reveal vis-label">Company Profiles</h3>
+        <div class="reveal-scale reveal-d1 mock-card"><div class="mc-hdr"><div class="mc-av" style="border-radius:8px;font-size:.68rem;font-weight:800;">AC</div><div><div class="mc-name">Acme Manufacturing Co.</div><div class="mc-co">Manufacturing · 210 employees · Philadelphia, PA</div></div></div><div class="mc-pills"><span class="mcp t">🏭 Manufacturing</span><span class="mcp g">✓ Uses Staffing</span><span class="mcp p">High Priority</span></div></div>
+        <div class="reveal-scale reveal-d2 mock-card"><div class="mc-hdr"><div class="mc-av" style="border-radius:8px;font-size:.68rem;font-weight:800;background:linear-gradient(135deg,#2A7A6A,var(--navy-dark));">AL</div><div><div class="mc-name">Apex Logistics Group</div><div class="mc-co">Logistics · 85 employees · King of Prussia, PA</div></div></div><div class="mc-pills"><span class="mcp t">🚚 Logistics</span><span class="mcp g">✓ Uses Staffing</span></div></div>
       </div>
     </div>
 
-    <div class="feat-block rev">
+    <div class="reveal-scale reveal-d2 feat-block rev">
       <div>
         <span class="feat-tag">02 · Decision-Maker Contacts</span>
         <div class="fbt">Direct line to the <em>person who signs.</em></div>
-        <p class="fb">You don't need 500 contacts at a company. You need one — the right one. myScout surfaces the CEOs, COOs, and Owners who actually make the call on staffing partners, with verified email and direct phone.</p>
+        <p class="reveal fb">You don't need 500 contacts at a company. You need one — the right one. myScout surfaces the CEOs, COOs, and Owners who actually make the call on staffing partners, with verified email and direct phone.</p>
         <ul class="flist"><li>CEO, COO, Owner, and VP-level contacts</li><li>Direct email reveal (not the generic info@ address)</li><li>Direct phone number reveal</li><li>Mutual connections surfaced automatically</li></ul>
       </div>
       <div class="fvis">
-        <h3 class="vis-label">Contact Card</h3>
-        <div class="mock-card">
+        <h3 class="reveal vis-label">Contact Card</h3>
+        <div class="reveal-scale reveal-d3 mock-card">
           <div class="mc-hdr"><div class="mc-av">MR</div><div><div class="mc-name">Michael Reynolds</div><div class="mc-co">COO · Acme Manufacturing Co.</div></div></div>
           <div class="mc-pills" style="margin-bottom:8px;"><span class="mcp t">📧 michael.r@acmemfg.com</span></div>
           <div class="mc-pills" style="margin-bottom:8px;"><span class="mcp t">📞 (215) 555-0142</span></div>
@@ -304,16 +318,16 @@ fbq('track', 'PageView');
       </div>
     </div>
 
-    <div class="feat-block">
+    <div class="reveal-scale reveal-d3 feat-block">
       <div>
         <span class="feat-tag">03 · DISC Behavioral Profiles</span>
         <div class="fbt">Know how they think<br><em>before you call.</em></div>
-        <p class="fb">A Dominant buyer wants speed and results. An Influential buyer wants relationships. A Steady buyer wants trust. A Conscientious buyer wants data. myScout tells you which one you're calling — so you sell to how they think, not how you think.</p>
+        <p class="reveal fb">A Dominant buyer wants speed and results. An Influential buyer wants relationships. A Steady buyer wants trust. A Conscientious buyer wants data. myScout tells you which one you're calling — so you sell to how they think, not how you think.</p>
         <ul class="flist"><li>Full D-I-S-C behavioral breakdown per decision-maker</li><li>Primary and secondary style identification</li><li>Communication preferences and motivators</li><li>Automatically informs your personalized sales strategy</li></ul>
       </div>
       <div class="fvis pur">
-        <h3 class="vis-label">DISC Profile · Michael Reynolds</h3>
-        <div class="mock-card">
+        <h3 class="reveal vis-label">DISC Profile · Michael Reynolds</h3>
+        <div class="reveal-scale reveal-d4 mock-card">
           <div class="disc-primary">Primary Style: <span style="color:#E85C5C;font-family:'Instrument Serif',serif;font-style:italic;">Dominant (D)</span></div>
           <div class="disc-bar-wrap">
             <div class="drow"><span class="dlabel">Dominant</span><div class="dbar"><div class="dbar-fill" style="background:#E85C5C;width:82%;"></div></div><span class="dscore">82</span></div>
@@ -326,16 +340,16 @@ fbq('track', 'PageView');
       </div>
     </div>
 
-    <div class="feat-block rev">
+    <div class="reveal-scale reveal-d4 feat-block rev">
       <div>
         <span class="feat-tag">04 · Warm Intro Detection</span>
         <div class="fbt">Turn your network into<br><em>your edge.</em></div>
-        <p class="fb">Cold calling is a last resort. myScout automatically surfaces your mutual connections to every prospect and tells you how to leverage them for a warm introduction. The best calls start with "so-and-so suggested I reach out."</p>
+        <p class="reveal fb">Cold calling is a last resort. myScout automatically surfaces your mutual connections to every prospect and tells you how to leverage them for a warm introduction. The best calls start with "so-and-so suggested I reach out."</p>
         <ul class="flist"><li>Automatic detection of mutual LinkedIn connections</li><li>Connection strength rating (strong, medium, light)</li><li>Suggested intro request language for each connection</li><li>Lower credit cost on paid plans vs. Free/Credit Only</li></ul>
       </div>
       <div class="fvis">
-        <h3 class="vis-label">Warm Intros · Michael Reynolds</h3>
-        <div class="mock-card">
+        <h3 class="reveal vis-label">Warm Intros · Michael Reynolds</h3>
+        <div class="reveal-scale reveal-d5 mock-card">
           <div class="warm-hdr"><span style="font-size:1.1rem;">🔥</span><div><div style="font-weight:800;font-size:.86rem;color:var(--navy-deep);">2 Mutual Connections Found</div><div style="font-size:.7rem;color:var(--text-muted);">Leverage these before you cold call</div></div></div>
           <div class="warm-conn"><div class="wc-av">JM</div><div><div class="wc-name">Jennifer Morris</div><div class="wc-rel">Former colleague · Now at Deloitte</div></div><span class="wc-str">Strong</span></div>
           <div class="warm-conn"><div class="wc-av" style="background:linear-gradient(135deg,var(--teal),var(--navy));">DK</div><div><div class="wc-name">David Kim</div><div class="wc-rel">LinkedIn connection · HR Director</div></div><span class="wc-str" style="background:rgba(2,146,183,.1);border-color:rgba(2,146,183,.2);color:var(--teal);">Medium</span></div>
@@ -343,20 +357,20 @@ fbq('track', 'PageView');
       </div>
     </div>
 
-    <div class="feat-block">
+    <div class="reveal-scale reveal-d5 feat-block">
       <div>
         <span class="feat-tag">05 · Personalized Sales Strategy</span>
         <div class="fbt">Not a template.<br><em>An actual strategy.</em></div>
-        <p class="fb">Combining DISC profile, mutual connections, staffing usage history, and company context — myScout builds a custom sales approach for every single prospect. Solo, Team, and Partner plans include unlimited strategies.</p>
+        <p class="reveal fb">Combining DISC profile, mutual connections, staffing usage history, and company context — myScout builds a custom sales approach for every single prospect. Solo, Team, and Partner plans include unlimited strategies.</p>
         <ul class="flist"><li>Step-by-step outreach sequence tailored to the prospect</li><li>Opening message language matched to their DISC style</li><li>Warm intro path integrated if connections exist</li><li>Talking points based on industry and company profile</li><li>Unlimited on Solo, Team, and Partner plans</li></ul>
       </div>
       <div class="fvis pur">
-        <h3 class="vis-label">Sales Strategy · Michael Reynolds</h3>
-        <div class="mock-card">
+        <h3 class="reveal vis-label">Sales Strategy · Michael Reynolds</h3>
+        <div class="reveal-scale reveal-d6 mock-card">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span style="font-size:.95rem;">📋</span><span style="font-size:.65rem;font-weight:800;padding:3px 10px;border-radius:100px;background:var(--purple-light);border:1px solid var(--purple-mid);color:var(--purple);letter-spacing:.08em;text-transform:uppercase;">Personalized Strategy</span></div>
-          <div class="strat-step"><div class="ss-num">1</div><div class="ss-text"><strong>Warm intro via Jennifer Morris.</strong> Ask her to forward a brief note — keep it 2 sentences, results-focused.</div></div>
-          <div class="strat-step"><div class="ss-num">2</div><div class="ss-text"><strong>Follow up by phone within 48hrs.</strong> He's a D-style — lead with time savings and placement speed, not relationship.</div></div>
-          <div class="strat-step"><div class="ss-num">3</div><div class="ss-text"><strong>Send one-page capability overview.</strong> Data-driven, concise. Include 1-2 relevant placements in manufacturing.</div></div>
+          <div class="reveal-scale reveal-d1 strat-step"><div class="ss-num">1</div><div class="ss-text"><strong>Warm intro via Jennifer Morris.</strong> Ask her to forward a brief note — keep it 2 sentences, results-focused.</div></div>
+          <div class="reveal-scale reveal-d2 strat-step"><div class="ss-num">2</div><div class="ss-text"><strong>Follow up by phone within 48hrs.</strong> He's a D-style — lead with time savings and placement speed, not relationship.</div></div>
+          <div class="reveal-scale reveal-d3 strat-step"><div class="ss-num">3</div><div class="ss-text"><strong>Send one-page capability overview.</strong> Data-driven, concise. Include 1-2 relevant placements in manufacturing.</div></div>
         </div>
       </div>
     </div>
@@ -367,16 +381,16 @@ fbq('track', 'PageView');
 <section class="scout-sec">
   <div class="wrap">
     <div class="stag teal">06 · Scout Requests</div>
-    <h2 class="sh w">Need deeper intel <em>fast?</em></h2>
-    <div class="scout-grid">
+    <h2 class="reveal sh w">Need deeper intel <em>fast?</em></h2>
+    <div class="reveal-scale reveal-d1 scout-grid">
       <div>
-        <p class="bt w" style="margin-bottom:24px;">Sometimes you need a full profile on a specific company — and you need it now. Submit a Scout Request and our team does the deep research, delivering a complete intel package within your chosen timeframe.</p>
+        <p class="reveal bt w" style="margin-bottom:24px;">Sometimes you need a full profile on a specific company — and you need it now. Submit a Scout Request and our team does the deep research, delivering a complete intel package within your chosen timeframe.</p>
         <div class="scout-opt"><div class="so-icon">🕐</div><div><div class="so-title">24-Hour Turnaround</div><div class="so-body">Full company and decision-maker intel package delivered within 24 hours.</div><div class="so-price">25 credits · Available on Credit Only, Solo, Team &amp; Partner</div></div></div>
         <div class="scout-opt"><div class="so-icon">⚡</div><div><div class="so-title">4-Hour Rush Turnaround</div><div class="so-body">Same full intel package, delivered within 4 hours when you can't wait.</div><div class="so-price">50 credits · Available on Credit Only, Solo, Team &amp; Partner</div></div></div>
-        <div class="refund-box"><div class="rb-title">✓ Full credit refund guarantee</div><div class="rb-body">If we don't deliver within the requested timeframe, every credit is returned automatically.</div></div>
+        <div class="reveal-scale reveal-d1 refund-box"><div class="rb-title">✓ Full credit refund guarantee</div><div class="rb-body">If we don't deliver within the requested timeframe, every credit is returned automatically.</div></div>
       </div>
       <div class="scout-vis">
-        <h3 class="vis-label" style="color:rgba(255,255,255,.4);">Scout Request Queue</h3>
+        <h3 class="reveal vis-label" style="color:rgba(255,255,255,.4);">Scout Request Queue</h3>
         <div class="sq-row"><div class="sq-icon">⚡</div><div><div class="sq-name">Northeast Medical Group</div><div class="sq-co">4hr rush · Submitted 1hr ago</div></div><span class="sq-st pend">In Progress</span></div>
         <div class="sq-row"><div class="sq-icon">🕐</div><div><div class="sq-name">Keystone Financial</div><div class="sq-co">24hr standard · Submitted 6hrs ago</div></div><span class="sq-st pend">In Progress</span></div>
         <div class="sq-row"><div class="sq-icon">🕐</div><div><div class="sq-name">Liberty Distribution Co.</div><div class="sq-co">24hr standard · Yesterday</div></div><span class="sq-st done">Delivered</span></div>
@@ -390,22 +404,22 @@ fbq('track', 'PageView');
   <div class="cta-orb"></div>
   <div class="cta-in">
     <div class="stag center teal">Try It</div>
-    <h2>See it for yourself.<br><em>Free, no card needed.</em></h2>
-    <p>Start with 50 free credits and explore the platform. Or book a call and we'll walk you through how myScout fits your sales process.</p>
+    <h2 class="reveal">See it for yourself.<br><em>Free, no card needed.</em></h2>
+    <p class="reveal">Start with 50 free credits and explore the platform. Or book a call and we'll walk you through how myScout fits your sales process.</p>
     <div class="cta-btns"><a href="https://app.myscout.ai" class="btn-teal" target="_blank" rel="noopener">Start Free →</a><a href="https://tiffany-scott.zohobookings.com/#/4739270000001317028" class="btn-ghost" target="_blank" rel="noopener">Book a Demo Call</a></div>
   </div>
 </section>
 
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
+    <div class="ft-brand"><div class="ft-logo"><img src="images/myScout_Logo_White_Transparent.png" alt="myScout — sales intelligence built exclusively for staffing" class="footer-logo-img"></div><p class="reveal ft-tag">The only sales intelligence platform built exclusively for staffing. We hunt. You kill.</p></div>
     <div class="ft-cols">
-      <div class="ft-col"><h3>Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
-      <div class="ft-col"><h3>Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
-      <div class="ft-col"><h3>Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Platform</h3><ul><li><a href="what-we-do">What We Do</a></li><li><a href="https://app.myscout.ai" target="_blank" rel="noopener">Sign In</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Company</h3><ul><li><a href="about">About Us</a></li><li><a href="blog">Blog</a></li><li><a href="https://myscoutleads.zohorecruit.com/jobs/Careers" target="_blank" rel="noopener">Careers</a></li><li><a href="https://merchloop.com/collections/myscout" target="_blank" rel="noopener">myStore</a></li></ul></div>
+      <div class="ft-col"><h3 class="reveal">Connect</h3><ul><li><a href="mailto:GameOn@myScoutLeads.com">GameOn@myScoutLeads.com</a></li><li><a href="tel:4849954800">484.995.4800</a></li><li><a href="contact">Contact Us</a></li><li><a href="privacy">Privacy Policy</a></li></ul></div>
     </div>
   </div>
-  <div class="ft-bot"><p>© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div></footer>
+  <div class="ft-bot"><p class="reveal">© 2026 myScout®. All Rights Reserved.</p><div class="socials"><a href="https://www.linkedin.com/company/myscoutleads/" target="_blank" rel="noopener">in</a><a href="https://www.facebook.com/people/myScout/61579013070583/" target="_blank" rel="noopener">f</a><a href="https://x.com/myscout8" target="_blank" rel="noopener">𝕏</a><a href="https://www.tiktok.com/@myscout8" target="_blank" rel="noopener">tt</a></div></div></footer>
 
 <!-- Chat Widget -->
 <style>
@@ -426,7 +440,7 @@ fbq('track', 'PageView');
 .chat-opt-icon{font-size:1.1rem;width:24px;text-align:center;}
 </style>
 <div class="chat-panel" id="chatPanel">
-  <div class="chat-panel-hdr"><h4>Let's talk</h4><p>Choose how you'd like to connect</p></div>
+  <div class="chat-panel-hdr"><h4>Let's talk</h4><p class="reveal">Choose how you'd like to connect</p></div>
   <div class="chat-panel-body">
     <a href="https://myscoutleads.zohobookings.com/#/myscoutleads" class="chat-opt" target="_blank"><span class="chat-opt-icon">📅</span>Book a Call</a>
     <a href="mailto:GameOn@myScoutLeads.com" class="chat-opt"><span class="chat-opt-icon">✉️</span>Email Us</a>
@@ -457,5 +471,35 @@ fbq('track', 'PageView');
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});});
 })();
 </script>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal,.reveal-scale').forEach(function(el){io.observe(el);});
+  /* Stat number counters */
+  var counters=document.querySelectorAll('[data-count]');
+  if(counters.length){
+    var cio=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting)return;
+        var el=e.target; var target=parseFloat(el.dataset.count);
+        var prefix=el.dataset.prefix||''; var suffix=el.dataset.suffix||'';
+        var duration=1400; var start=performance.now();
+        (function tick(now){
+          var p=Math.min((now-start)/duration,1); var eased=1-Math.pow(1-p,3);
+          el.textContent=prefix+Math.round(target*eased)+suffix;
+          if(p<1)requestAnimationFrame(tick);
+        })(start);
+        cio.unobserve(el);
+      });
+    },{threshold:.3});
+    counters.forEach(function(c){c.textContent='0'; cio.observe(c);});
+  }
+})();
+</script>
+
 </body>
 </html>
