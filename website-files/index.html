@@ -345,7 +345,7 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.07);pa
     var a = e.target && e.target.closest ? e.target.closest('a') : null;
     if(!a || !a.href) return;
     var href = a.href;
-    if(href.indexOf('zohobookings.com') !== -1){
+    if(href.indexOf('/book/demo') !== -1){
       gtag('event', 'book_demo_click', {event_category:'cta', event_label:'Book Demo', link_url: href, page_location: location.pathname});
     } else if(href.indexOf('app.myscout.ai') !== -1){
       gtag('event', 'try_free_click', {event_category:'cta', event_label:'Try Free', link_url: href, page_location: location.pathname});
@@ -381,7 +381,7 @@ fbq('track', 'PageView');
     <li><a href="about">About</a></li>
     <li><a href="blog">Blog</a></li>
     <li><a href="contact">Contact</a></li>
-    <li><a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" target="_blank" rel="noopener" class="nav-demo" style="background:var(--purple)!important;color:var(--white)!important;padding:9px 18px;border-radius:6px;font-weight:700!important;margin-right:8px;transition:all .2s;">Book Demo</a></li><li><a href="https://app.myscout.ai/signup" class="nav-cta" target="_blank" rel="noopener">Try Free →</a></li>
+    <li><a href="https://app.myscout.ai/book/demo" target="_blank" rel="noopener" class="nav-demo" style="background:var(--purple)!important;color:var(--white)!important;padding:9px 18px;border-radius:6px;font-weight:700!important;margin-right:8px;transition:all .2s;">Book Demo</a></li><li><a href="https://app.myscout.ai/signup" class="nav-cta" target="_blank" rel="noopener">Try Free →</a></li>
   </ul>
 </nav>
 
@@ -392,7 +392,7 @@ fbq('track', 'PageView');
   <li><a href="about">About</a></li>
   <li><a href="blog">Blog</a></li>
   <li><a href="contact">Contact</a></li>
-  <li><a href="https://tiffany-scott.zohobookings.com/#/myscout?bookedFrom=ShortenURL" target="_blank" rel="noopener" style="background:var(--purple);color:var(--white)!important;text-align:center;border-radius:8px;padding:14px 20px;display:block;margin-bottom:8px;">Book Demo</a></li><li><a href="https://app.myscout.ai/signup" class="mobile-cta" target="_blank" rel="noopener">Try Free &rarr;</a></li>
+  <li><a href="https://app.myscout.ai/book/demo" target="_blank" rel="noopener" style="background:var(--purple);color:var(--white)!important;text-align:center;border-radius:8px;padding:14px 20px;display:block;margin-bottom:8px;">Book Demo</a></li><li><a href="https://app.myscout.ai/signup" class="mobile-cta" target="_blank" rel="noopener">Try Free &rarr;</a></li>
 </ul></aside>
 
 
@@ -566,7 +566,7 @@ fbq('track', 'PageView');
     <p>Start free today — no credit card, no commitment. Or book a call and let's talk about what your pipeline actually needs.</p>
     <div class="cta-btns">
       <a href="https://app.myscout.ai/signup" class="btn-teal" target="_blank" rel="noopener">Start Free Today →</a>
-      <a href="https://tiffany-scott.zohobookings.com/#/4739270000001317028" class="btn-ghost" target="_blank" rel="noopener">Book a Call</a>
+      <a href="https://app.myscout.ai/book/demo" class="btn-ghost" target="_blank" rel="noopener">Book a Call</a>
     </div>
     <p class="cta-note">No sales pitch. No pressure. Prospects for Staffing. Nothing else.</p>
   </div>
@@ -645,7 +645,7 @@ function setB(m){
 <div class="chat-panel" id="chatPanel">
   <div class="chat-panel-hdr"><h4>Let's talk</h4><p>Choose how you'd like to connect</p></div>
   <div class="chat-panel-body">
-    <a href="https://myscoutleads.zohobookings.com/#/myscoutleads" class="chat-opt" target="_blank"><span class="chat-opt-icon">📅</span>Book a Call</a>
+    <a href="https://app.myscout.ai/book/demo" class="chat-opt" target="_blank"><span class="chat-opt-icon">📅</span>Book a Call</a>
     <a href="mailto:GameOn@myScoutLeads.com" class="chat-opt"><span class="chat-opt-icon">✉️</span>Email Us</a>
     <a href="tel:4849954800" class="chat-opt"><span class="chat-opt-icon">📞</span>484.995.4800</a>
   </div>
