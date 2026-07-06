@@ -1,0 +1,11 @@
+# Security headers for myscout.ai on Netlify.
+# NOTE: vercel.json in this repo is IGNORED by Netlify. This file is what
+# actually sets headers in production. Added 2026-07-06 (Site Pulse fix queue).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
